@@ -9,9 +9,12 @@
     <style>
         html, body {
             overflow-x: hidden;
+            height: 100%;
         }
         body {
-            background-color: #181a20;
+            /* Set vaporwave gif as background, cover, fixed, centered */
+            background: url('https://github.com/SandDew/MyRadWebsite/raw/main/vapor.gif') no-repeat center center fixed;
+            background-size: cover;
             font-family: 'Comic Sans MS', sans-serif;
             color: #e0e0e0;
             text-align: center;
@@ -19,6 +22,7 @@
             padding: 0;
             padding-bottom: 38px;
             transition: background 0.5s;
+            min-height: 100vh;
         }
         .main-content {
             transition: filter 0.3s;
@@ -224,7 +228,7 @@
         .clippy-container {
             position: absolute;
             left: 8px;
-            bottom: 38px;
+            bottom: 48px; /* was 38px, now 48px to sit above the taskbar and columns */
             z-index: 300;
             display: flex;
             flex-direction: column;
@@ -356,6 +360,180 @@
             margin: 0;
             white-space: pre-wrap;
         }
+        /* Windows 95 window styles */
+        .win95-window {
+            position: fixed;
+            top: 60px;
+            left: 50%;
+            transform: translateX(-50%);
+            min-width: 320px;
+            max-width: 95vw;
+            background: #f0f0f0;
+            border: 2px solid #000;
+            box-shadow: 8px 8px 0 #888;
+            z-index: 5000;
+            border-radius: 6px;
+            animation: win95pop 0.2s;
+        }
+        @keyframes win95pop {
+            from { transform: translateX(-50%) scale(0.9);}
+            to { transform: translateX(-50%) scale(1);}
+        }
+        .win95-titlebar {
+            background: linear-gradient(90deg, #000080 80%, #c0c0c0 100%);
+            color: #fff;
+            font-weight: bold;
+            font-size: 1.1em;
+            padding: 8px 12px;
+            border-bottom: 2px solid #808080;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-radius: 6px 6px 0 0;
+            user-select: none;
+        }
+        .win95-window-icon {
+            width: 20px;
+            height: 20px;
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+        .win95-close {
+            background: #c0c0c0;
+            border: 2px outset #fff;
+            color: #800;
+            font-size: 1.3em;
+            font-weight: bold;
+            border-radius: 4px;
+            width: 32px;
+            height: 32px;
+            cursor: pointer;
+            margin-left: 10px;
+            transition: background 0.2s;
+        }
+        .win95-close:hover {
+            background: #ff0000;
+            color: #fff;
+            border: 2px inset #fff;
+        }
+        .win95-window-content {
+            padding: 24px 18px 18px 18px;
+            color: #222;
+            font-size: 1.1em;
+            background: #fff;
+            border-radius: 0 0 6px 6px;
+            text-align: center;
+        }
+        /* Windows 95 Window overlays for each page (full-page, styled like the screenshot) */
+        .win95-window95 {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            min-width: 0;
+            min-height: 0;
+            max-width: none;
+            max-height: none;
+            background: #f0f0f0;
+            border: 2px solid #000;
+            box-shadow: 8px 8px 0 #888;
+            z-index: 5000;
+            border-radius: 4px;
+            display: flex;
+            flex-direction: column;
+            animation: win95pop 0.2s;
+        }
+        .win95-window95-titlebar {
+            background: linear-gradient(90deg, #000080 80%, #c0c0c0 100%);
+            color: #fff;
+            font-weight: bold;
+            font-size: 1.1em;
+            padding: 4px 12px 4px 8px;
+            border-bottom: 2px solid #808080;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-radius: 2px 2px 0 0;
+            user-select: none;
+            height: 32px;
+        }
+        .win95-window95-icon {
+            width: 20px;
+            height: 20px;
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+        .win95-window95-controls {
+            display: flex;
+            align-items: center;
+            gap: 2px;
+        }
+        .win95-window95-btn {
+            background: #c0c0c0;
+            border: 2px outset #fff;
+            color: #800;
+            font-size: 1.1em;
+            font-weight: bold;
+            border-radius: 2px;
+            width: 28px;
+            height: 28px;
+            cursor: pointer;
+            margin-left: 2px;
+            transition: background 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .win95-window95-btn:hover {
+            background: #ff0000;
+            color: #fff;
+            border: 2px inset #fff;
+        }
+        .win95-window95-menubar {
+            background: #e0e0e0;
+            border-bottom: 1px solid #b0b0b0;
+            padding: 2px 8px;
+            font-size: 1em;
+            display: flex;
+            gap: 18px;
+            height: 26px;
+            align-items: center;
+            font-family: 'MS Sans Serif', Arial, sans-serif;
+        }
+        .win95-menu-item {
+            color: #222;
+            padding: 1px 8px;
+            border-radius: 2px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+        .win95-menu-item:hover {
+            background: #000080;
+            color: #fff;
+        }
+        .win95-window95-content {
+            flex: 1;
+            overflow: auto;
+            padding: 32px 18px 18px 18px;
+            color: #222;
+            font-size: 1.1em;
+            background: #fff;
+            text-align: center;
+            font-family: 'MS Sans Serif', Arial, sans-serif;
+        }
+        .win95-window95-statusbar {
+            background: #e0e0e0;
+            border-top: 2px solid #b0b0b0;
+            color: #222;
+            font-size: 0.98em;
+            padding: 4px 12px;
+            height: 28px;
+            display: flex;
+            align-items: center;
+            font-family: 'MS Sans Serif', Arial, sans-serif;
+            border-radius: 0 0 2px 2px;
+        }
         @media (max-width: 600px) {
             .win95-taskbar {
                 font-size: 0.9em;
@@ -373,10 +551,105 @@
                 font-size: 1em;
                 padding: 30px 10px;
             }
+            .win95-window {
+                width: 90%;
+                max-width: 300px;
+            }
+            .win95-window95-content {
+                padding: 12px 4px 8px 4px;
+                font-size: 1em;
+            }
+            .win95-window95 {
+                font-size: 0.95em;
+            }
+        }
+        /* Add or update these styles in your <style> section for authentic Win95 notification look */
+        #notification-container {
+            position: fixed;
+            right: 24px;
+            bottom: 54px;
+            z-index: 99999;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            pointer-events: none;
+        }
+        .win95-notification {
+            min-width: 260px;
+            max-width: 340px;
+            background: #f0f0f0;
+            border: 2px solid #fff;
+            border-bottom-color: #808080;
+            border-right-color: #808080;
+            box-shadow: 2px 2px 0 #808080, 4px 4px 0 #c0c0c0;
+            border-radius: 0;
+            margin-top: 12px;
+            font-family: 'MS Sans Serif', Arial, sans-serif;
+            animation: notif-pop 0.2s;
+            pointer-events: auto;
+            opacity: 1;
+            transition: opacity 0.7s;
+            padding: 0;
+        }
+        .win95-notification.fade-out {
+            opacity: 0;
+            transition: opacity 0.7s;
+        }
+        .win95-notif-titlebar {
+            background: #000080;
+            color: #fff;
+            font-weight: bold;
+            font-size: 1em;
+            padding: 2px 8px 2px 8px;
+            border-bottom: 1px solid #808080;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            user-select: none;
+            font-family: 'MS Sans Serif', Arial, sans-serif;
+            height: 22px;
+        }
+        .win95-notif-close {
+            background: #c0c0c0;
+            border: 1px solid #fff;
+            border-bottom-color: #808080;
+            border-right-color: #808080;
+            color: #800;
+            font-size: 1em;
+            font-weight: bold;
+            border-radius: 0;
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+            margin-left: 8px;
+            transition: background 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+        }
+        .win95-notif-close:hover {
+            background: #ff0000;
+            color: #fff;
+            border: 1px inset #fff;
+        }
+        .win95-notif-content {
+            padding: 10px 12px 10px 12px;
+            color: #222;
+            font-size: 1em;
+            background: #f0f0f0;
+            border-radius: 0;
+            text-align: left;
+            font-family: 'MS Sans Serif', Arial, sans-serif;
+        }
+        @keyframes notif-pop {
+            from { transform: translateY(30px) scale(0.95); opacity: 0; }
+            to   { transform: translateY(0) scale(1); opacity: 1; }
         }
     </style>
 </head>
 <body>
+    <audio id="bsod-audio" src="https://github.com/sanddew/MyRadWebsite/raw/main/bsod-buzz.mp3"></audio>
     <div class="main-content" id="main-content">
         <div class="gif-container">
             <img src="https://github.com/sanddew/MyRadWebsite/raw/main/cooltext485016549783963.gif" alt="My Radical Webpage">
@@ -400,22 +673,30 @@
         <div class="marquee">
             <marquee>Some cool stuff you can do!</marquee>
         </div>
-        <!-- Template pages -->
+        <!-- About Me with images -->
         <div id="about" style="display:none;">
             <h2>About Me</h2>
-            <p>This is a placeholder for the About Me page. Add your info here!</p>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:1em;">
+                <img src="https://github.com/sanddew/MyRadWebsite/raw/main/dewy-avatar.gif" alt="Dewy Avatar" style="height:100px;border-radius:12px;">
+                <img src="https://github.com/sanddew/MyRadWebsite/raw/main/vr-headset.gif" alt="VR Headset" style="height:80px;">
+                <p>This is a placeholder for the About Me page. Add your info here!</p>
+            </div>
+            
         </div>
         <div id="projects" style="display:none;">
             <h2>My Projects</h2>
             <p>This is a placeholder for the Projects page. Show off your VR hardware and 3D models here!</p>
+            
         </div>
         <div id="photos" style="display:none;">
             <h2>Cool Photos</h2>
             <p>This is a placeholder for the Cool Photos page. Add your favorite images and GIFs here!</p>
+            
         </div>
         <div id="blog" style="display:none;">
             <h2>Blog</h2>
             <p>This is a placeholder for the Blog page. Share your thoughts and updates here!</p>
+            
         </div>
     </div>
 
@@ -483,10 +764,111 @@ The current application will be terminated.
 *  Press any key to continue
 
 -------------------------------
-Sorry, you've hit a blue screen of death!
 Please refresh the page to continue.
+
         </pre>
+        
     </div>
+
+    <!-- Windows 95 Window overlays for each page (full-page, styled like the screenshot) -->
+    <div class="win95-window95" id="about-window" style="display:none;">
+        <div class="win95-window95-titlebar">
+            <span>
+                <img src="https://win98icons.alexmeub.com/icons/png/info_book-0.png" class="win95-window95-icon">
+                About Me
+            </span>
+            <div class="win95-window95-controls">
+                <button class="win95-window95-btn" onclick="closeWindow('about-window')" title="Close"><b>✖</b></button>
+            </div>
+        </div>
+        <div class="win95-window95-menubar">
+            <span class="win95-menu-item">File</span>
+            <span class="win95-menu-item">Edit</span>
+            <span class="win95-menu-item">View</span>
+            <span class="win95-menu-item">Help</span>
+        </div>
+        <div class="win95-window95-content">
+            <div style="display:flex;flex-direction:column;align-items:center;gap:1em;">
+                <img src="https://github.com/sanddew/MyRadWebsite/raw/main/dewy-avatar.gif" alt="Dewy Avatar" style="height:100px;border-radius:12px;">
+                <img src="https://github.com/sanddew/MyRadWebsite/raw/main/vr-headset.gif" alt="VR Headset" style="height:80px;">
+                <p>This is a placeholder for the About Me page. Add your info here!</p>
+            </div>
+        </div>
+        <div class="win95-window95-statusbar">
+            1 object(s)
+        </div>
+    </div>
+    <div class="win95-window95" id="projects-window" style="display:none;">
+        <div class="win95-window95-titlebar">
+            <span>
+                <img src="https://win98icons.alexmeub.com/icons/png/computer_explorer-0.png" class="win95-window95-icon">
+                My Projects
+            </span>
+            <div class="win95-window95-controls">
+                <button class="win95-window95-btn" onclick="closeWindow('projects-window')" title="Close"><b>✖</b></button>
+            </div>
+        </div>
+        <div class="win95-window95-menubar">
+            <span class="win95-menu-item">File</span>
+            <span class="win95-menu-item">Edit</span>
+            <span class="win95-menu-item">View</span>
+            <span class="win95-menu-item">Help</span>
+        </div>
+        <div class="win95-window95-content">
+            <p>This is a placeholder for the Projects page. Show off your VR hardware and 3D models here!</p>
+        </div>
+        <div class="win95-window95-statusbar">
+            1 object(s)
+        </div>
+    </div>
+    <div class="win95-window95" id="photos-window" style="display:none;">
+        <div class="win95-window95-titlebar">
+            <span>
+                <img src="https://win98icons.alexmeub.com/icons/png/camera-3.png" class="win95-window95-icon">
+                Cool Photos
+            </span>
+            <div class="win95-window95-controls">
+                <button class="win95-window95-btn" onclick="closeWindow('photos-window')" title="Close"><b>✖</b></button>
+            </div>
+        </div>
+        <div class="win95-window95-menubar">
+            <span class="win95-menu-item">File</span>
+            <span class="win95-menu-item">Edit</span>
+            <span class="win95-menu-item">View</span>
+            <span class="win95-menu-item">Help</span>
+        </div>
+        <div class="win95-window95-content">
+            <p>This is a placeholder for the Cool Photos page. Add your favorite images and GIFs here!</p>
+        </div>
+        <div class="win95-window95-statusbar">
+            1 object(s)
+        </div>
+    </div>
+    <div class="win95-window95" id="blog-window" style="display:none;">
+        <div class="win95-window95-titlebar">
+            <span>
+                <img src="https://win98icons.alexmeub.com/icons/png/notepad-2.png" class="win95-window95-icon">
+                Blog
+            </span>
+            <div class="win95-window95-controls">
+                <button class="win95-window95-btn" onclick="closeWindow('blog-window')" title="Close"><b>✖</b></button>
+            </div>
+        </div>
+        <div class="win95-window95-menubar">
+            <span class="win95-menu-item">File</span>
+            <span class="win95-menu-item">Edit</span>
+            <span class="win95-menu-item">View</span>
+            <span class="win95-menu-item">Help</span>
+        </div>
+        <div class="win95-window95-content">
+            <p>This is a placeholder for the Blog page. Share your thoughts and updates here!</p>
+        </div>
+        <div class="win95-window95-statusbar">
+            1 object(s)
+        </div>
+    </div>
+
+    <div id="notification-container"></div>
 
     <script>
     // Counter
@@ -580,25 +962,87 @@ Please refresh the page to continue.
         // Show main content
         document.querySelector('.gif-container').style.display = '';
         document.querySelector('.outdated-note-box').style.display = '';
-        document.querySelector('.container').style.display = '';
-        document.querySelector('.marquee').style.display = '';
-        // Show Clippy
-        clippyContainer.classList.remove('fade-out');
-    }
-    document.getElementById('about-link').onclick = function(e) { e.preventDefault(); showPage('about'); };
-    document.getElementById('projects-link').onclick = function(e) { e.preventDefault(); showPage('projects'); };
-    document.getElementById('photos-link').onclick = function(e) { e.preventDefault(); showPage('photos'); };
-    document.getElementById('blog-link').onclick = function(e) { e.preventDefault(); showPage('blog'); };
-    // Clicking the logo returns home
-    document.querySelector('.gif-container img').onclick = function() { showHome(); };
-
-    // Shut Down (BSOD)
-    document.getElementById('shutdown-link').onclick = function(e) {
-        e.preventDefault();
-        document.getElementById('bsod').style.display = 'flex';
-        document.getElementById('main-content').style.filter = 'blur(2px)';
-        document.body.style.background = '#0000aa';
     };
+    document.getElementById('photos-link').onclick = function(e) {
+        e.preventDefault();
+        openWindow('photos-window');
+        startMenu.style.display = 'none';
+        startBtn.classList.remove('active');
+        menuOpen = false;
+    };
+    document.getElementById('blog-link').onclick = function(e) {
+        e.preventDefault();
+        openWindow('blog-window');
+        startMenu.style.display = 'none';
+        startBtn.classList.remove('active');
+        menuOpen = false;
+    };
+
+    // Window open/close functions for full-page windows
+    function openWindow(winId) {
+        document.getElementById(winId).style.display = 'flex';
+    }
+    function closeWindow(winId) {
+        document.getElementById(winId).style.display = 'none';
+    }
+
+    // Notification system
+    const notificationNames = [
+        "Phil del Futuro", "Mia", "Levy", "Gabriel", "Lyle", "Thermo", "Benni", "BB", "Dak"
+        , "DB"
+    ];
+    const notificationMessages = [
+        "42", "Donde esta la biblioteca?", "Why did the graveyard have good test scores? They all passed",
+        "I used to think I was indecisive, but now I’m not so sure", "Did you get the memo?",
+        "Okay man, you can have your stapler. No fires.", "viva la vida.", "viva la vida loca.", 
+        "What's life without whimsy?", "Who's David?"
+    ];
+
+    function showNotification() {
+        const name = notificationNames[Math.floor(Math.random() * notificationNames.length)];
+        const message = notificationMessages[Math.floor(Math.random() * notificationMessages.length)];
+        const notifId = 'notif-' + Date.now() + '-' + Math.floor(Math.random()*10000);
+
+        const notif = document.createElement('div');
+        notif.className = 'win95-notification';
+        notif.id = notifId;
+        notif.innerHTML = `
+            <div class="win95-notif-titlebar">
+                <span>${name}</span>
+                <button class="win95-notif-close" title="Close" onclick="fadeOutNotification(this.closest('.win95-notification'))">✖</button>
+            </div>
+            <div class="win95-notif-content">${message}</div>
+        `;
+        document.getElementById('notification-container').appendChild(notif);
+
+        // Fade out after 7 seconds, then remove
+        setTimeout(() => {
+            fadeOutNotification(notif);
+        }, 7000);
+    }
+
+    // Helper to fade out and remove notification
+    function fadeOutNotification(notif) {
+        if (!notif) return;
+        notif.classList.add('fade-out');
+        setTimeout(() => {
+            if (notif && notif.parentNode) notif.parentNode.removeChild(notif);
+        }, 700); // Match the CSS transition duration
+    }
+
+    // Random interval between 20-80 seconds
+    function scheduleNotification() {
+        const next = Math.random() * (80 - 20) + 20;
+        setTimeout(() => {
+            showNotification();
+            scheduleNotification();
+        }, next * 1000);
+    }
+
+    // Start notifications after page load
+    window.addEventListener('DOMContentLoaded', () => {
+        scheduleNotification();
+    });
     </script>
 </body>
 </html>
