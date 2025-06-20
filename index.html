@@ -4,126 +4,601 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>90s Aesthetic Webpage</title>
+    <title>My Radical Webpage, Enjoy Y'all</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
     <style>
+        html, body {
+            overflow-x: hidden;
+        }
         body {
-            background-color: #111;
+            background-color: #181a20;
             font-family: 'Comic Sans MS', sans-serif;
-            color: #fff;
+            color: #e0e0e0;
             text-align: center;
             margin: 0;
             padding: 0;
+            padding-bottom: 38px;
+            transition: background 0.5s;
         }
-
+        .main-content {
+            transition: filter 0.3s;
+        }
         h1 {
             font-size: 3em;
-            color: #ff00ff;
-            text-shadow: 3px 3px 5px #ff0000;
+            color: #00e6e6;
+            text-shadow: 3px 3px 8px #0ff, 0 0 10px #0ff;
             margin-top: 50px;
             letter-spacing: 2px;
         }
-
         h2 {
-            color: #00ffff;
+            color: #ffb347;
             font-size: 2em;
-            text-shadow: 2px 2px 4px #00ff00;
+            text-shadow: 2px 2px 8px #ffb347;
             margin-top: 30px;
         }
-
-        .container {
-            width: 90%;
-            margin: 20px auto;
-            border: 2px dashed #ff00ff;
-            padding: 20px;
-            background: #222;
-        }
-
         a {
-            color: #ffff00;
+            color: #00ffd0;
             font-weight: bold;
             text-decoration: none;
             font-size: 1.5em;
             transition: color 0.3s ease-in-out;
         }
-
         a:hover {
-            color: #ff4500;
+            color: #ff00cc;
             text-decoration: underline;
         }
-
         .neon-button {
             display: inline-block;
-            background-color: #ff00ff;
             color: #fff;
             padding: 15px 25px;
             font-size: 1.5em;
             border-radius: 10px;
             border: none;
-            box-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff;
             cursor: pointer;
+            background: #23272f;
+            box-shadow: 0 0 10px #00ffd0, 0 0 20px #00ffd0;
             transition: all 0.3s ease;
         }
-
         .neon-button:hover {
-            background-color: #ff4500;
-            box-shadow: 0 0 10px #ff4500, 0 0 20px #ff4500, 0 0 30px #ff4500;
+            background-color: #00ffd0;
+            color: #181a20;
+            box-shadow: 0 0 20px #00ffd0, 0 0 40px #00ffd0;
         }
-
         .marquee {
-            color: #ff4500;
+            color: #00ffd0;
             font-size: 1.5em;
             animation: marquee 10s linear infinite;
             margin-top: 20px;
         }
-
         @keyframes marquee {
             0% { transform: translateX(100%); }
             100% { transform: translateX(-100%); }
         }
-
         .image-container {
             margin-top: 40px;
         }
-
-        img {
-            max-width: 100%;
-            border: 5px solid #ff00ff;
-            box-shadow: 0 0 10px #ff00ff;
+        .outdated-note {
+            background: #23272f;
+            color: #ffe066;
+            padding: 12px 18px;
+            border: 1px solid #444;
+            border-radius: 6px;
+            font-size: 1.1em;
+            margin: 20px 0;
+            font-family: sans-serif;
         }
-
-        .gif-container {
-            margin-top: 30px;
+        .outdated-note-box {
+            background: #23272f;
+            color: #ffe066;
+            padding: 14px 22px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+            font-size: 1.1em;
+            margin: 24px 0;
+            font-family: sans-serif;
+            display: inline-block;
         }
-
-        .gif-container img {
-            max-width: 50%;
-            border-radius: 10px;
-            box-shadow: 0 0 10px #ff00ff;
+        .color-change {
+            font-weight: bold;
+            animation: colorFade 1.5s infinite alternate;
+        }
+        @keyframes colorFade {
+            0%   { color: #00ffd0; }
+            50%  { color: #ffb347; }
+            100% { color: #ff00cc; }
+        }
+        /* Make the link look generic */
+        .generic-link {
+            color: #00ffd0;
+            text-decoration: underline;
+            font-size: inherit;
+            font-weight: normal;
+        }
+        .center-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2em;
+            flex-direction: row;
+        }
+        .crazy-counter {
+            font-family: 'Bangers', cursive;
+            font-size: 2.5em;
+            color: #00ffd0;
+            text-shadow: 2px 2px 0 #ff00cc, 4px 4px 0 #ffb347;
+            outline: none;
+            border: none;
+            transition: transform 0.1s;
+            background: transparent;
+        }
+        #click-btn {
+            outline: none !important;
+            border: none;
+            box-shadow: 0 0 10px #00ffd0;
+            font-size: 1.1em;
+            background: #23272f;
+            color: #00ffd0;
+            cursor: pointer;
+            padding: 0.5em 1.2em;
+            border-radius: 8px;
+            transition: background 0.2s, color 0.2s;
+        }
+        #click-btn:hover {
+            background: #00ffd0;
+            color: #181a20;
+        }
+        #click-btn:focus {
+            outline: none !important;
+            box-shadow: 0 0 0 2px #00ffd0 !important;
+        }
+        /* Windows 95 Taskbar styles */
+        .win95-taskbar {
+            position: fixed;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 38px;
+            background: linear-gradient(180deg, #c0c0c0 80%, #808080 100%);
+            border-top: 2px solid #fff;
+            border-bottom: 2px solid #404040;
+            display: flex;
+            align-items: center;
+            z-index: 200;
+            font-family: 'MS Sans Serif', Arial, sans-serif;
+            box-shadow: 0 -2px 0 #fff;
+            padding: 0 8px;
+        }
+        .start-btn {
+            display: flex;
+            align-items: center;
+            background: linear-gradient(180deg, #f0f0f0 70%, #b0b0b0 100%);
+            border: 2px outset #fff;
+            border-radius: 3px;
+            padding: 2px 14px 2px 6px;
+            font-weight: bold;
+            font-size: 1.1em;
+            color: #222;
+            cursor: pointer;
+            box-shadow: 1px 1px 0 #808080;
+            margin-right: 10px;
+            user-select: none;
+            position: relative;
+            z-index: 202;
+        }
+        .start-btn.active {
+            border: 2px inset #fff;
+            background: #b0b0b0;
+        }
+        .start-icon {
+            width: 22px;
+            height: 22px;
+            margin-right: 6px;
+            vertical-align: middle;
+        }
+        .taskbar-spacer {
+            flex: 1;
+        }
+        .taskbar-info {
+            color: #222;
+            font-size: 1em;
+            margin-right: 8px;
+        }
+        .taskbar-info a {
+            color: #000080;
+            text-decoration: underline;
+            margin: 0 4px;
+            font-size: 1em;
+            cursor: pointer;
+        }
+        .taskbar-info a:hover {
+            color: #ff00cc;
+        }
+        .taskbar-copyright {
+            color: #222;
+            font-size: 0.95em;
+            margin-left: 10px;
+            opacity: 0.7;
+            font-family: 'MS Sans Serif', Arial, sans-serif;
+        }
+        /* Clippy styles */
+        .clippy-container {
+            position: absolute;
+            left: 8px;
+            bottom: 38px;
+            z-index: 300;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            transition: opacity 0.5s;
+        }
+        .clippy-img {
+            width: 110px;
+            height: auto;
+            image-rendering: pixelated;
+            cursor: pointer;
+            display: block;
+            transition: opacity 0.5s;
+        }
+        .clippy-container.fade-out,
+        .clippy-img.fade-out {
+            opacity: 0;
+            pointer-events: none;
+        }
+        .clippy-tooltip {
+            display: block;
+            position: absolute;
+            left: 120px;
+            bottom: 30px;
+            background: #fffbe7;
+            color: #23234a;
+            border: 2px solid #b0b0b0;
+            border-radius: 10px 20px 20px 10px;
+            box-shadow: 2px 2px 8px #0002;
+            padding: 10px 18px 10px 14px;
+            font-size: 0.98em;
+            min-width: 160px;
+            max-width: 210px;
+            font-family: 'Segoe UI', 'Tahoma', 'Geneva', Verdana, sans-serif;
+            z-index: 301;
+            text-align: left;
+            line-height: 1.3;
+            border-left: 6px solid #ffe066;
+            border-bottom: 3px solid #ffe066;
+        }
+        .clippy-close {
+            position: absolute;
+            top: 4px;
+            right: 8px;
+            font-size: 1.3em;
+            color: #888;
+            cursor: pointer;
+            font-weight: bold;
+            background: none;
+            border: none;
+            padding: 0 10px;
+            line-height: 1;
+        }
+        .clippy-close:hover {
+            color: #c00;
+        }
+        /* Start Menu styles */
+        .start-menu {
+            display: none;
+            position: fixed;
+            left: 8px;
+            bottom: 46px;
+            width: 240px;
+            background: #f0f0f0;
+            border: 2px outset #fff;
+            box-shadow: 4px 4px 0 #808080;
+            z-index: 300;
+            font-family: 'MS Sans Serif', Arial, sans-serif;
+            padding-bottom: 8px;
+        }
+        .start-menu-header {
+            background: linear-gradient(90deg, #000080 80%, #c0c0c0 100%);
+            color: #fff;
+            font-weight: bold;
+            font-size: 1.1em;
+            padding: 10px 10px 10px 12px;
+            border-bottom: 2px solid #808080;
+            letter-spacing: 2px;
+            display: flex;
+            align-items: center;
+        }
+        .start-menu-link {
+            display: flex;
+            align-items: center;
+            padding: 10px 10px 10px 18px;
+            color: #000;
+            text-decoration: none;
+            font-size: 1em;
+            border-bottom: 1px solid #d0d0d0;
+            transition: background 0.2s, color 0.2s;
+        }
+        .start-menu-link:last-child {
+            border-bottom: none;
+        }
+        .start-menu-link:hover {
+            background: #000080;
+            color: #fff;
+        }
+        .start-menu-icon {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+        .start-menu-separator {
+            border-top: 1px solid #b0b0b0;
+            margin: 6px 0;
+        }
+        /* BSOD styles */
+        .bsod {
+            background: #0000aa !important;
+            color: #fff !important;
+            min-height: 100vh;
+            width: 100vw;
+            position: fixed;
+            top: 0; left: 0;
+            z-index: 9999;
+            font-family: 'Consolas', 'Courier New', monospace;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 60px 40px;
+            font-size: 1.4em;
+        }
+        .bsod pre {
+            color: #fff;
+            font-size: 1.1em;
+            margin: 0;
+            white-space: pre-wrap;
+        }
+        @media (max-width: 600px) {
+            .win95-taskbar {
+                font-size: 0.9em;
+            }
+            .start-menu {
+                width: 170px;
+            }
+            .clippy-tooltip {
+                min-width: 110px;
+                max-width: 140px;
+                left: 90px;
+                padding: 8px 6px 8px 8px;
+            }
+            .bsod {
+                font-size: 1em;
+                padding: 30px 10px;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Add GIF here -->
-    <div class="gif-container">
-        <img src="https://github.com/sanddew/MyRadWebsite/raw/main/cooltext485016549783963.gif" alt="My Radical Webpage">
+    <div class="main-content" id="main-content">
+        <div class="gif-container">
+            <img src="https://github.com/sanddew/MyRadWebsite/raw/main/cooltext485016549783963.gif" alt="My Radical Webpage">
+        </div>
+        <div class="outdated-note-box">
+            Note: This website is <span class="color-change">out of date</span>, please go to my new website: 
+            <a href="https://www.youtube.com/watch?v=59O0TgS7EMI" target="_blank" class="generic-link">here</a>
+        </div>
+        <div class="container">
+            <p>Check out the <img src="https://github.com/sanddew/MyRadWebsite/raw/main/2025-06-20-CLICK.gif" alt="Click" style="height:5em;vertical-align:middle;">
+            counter</p>
+            <div class="center-container">
+                <img src="https://github.com/sanddew/MyRadWebsite/raw/main/world.gif" alt="Left Shoulder" style="height:3em;">
+                <span id="counter" class="crazy-counter">0</span>
+                <button id="click-btn">
+                    CLICK ME
+                </button>
+                <img src="https://github.com/sanddew/MyRadWebsite/raw/main/spinningcd.gif" alt="Right Shoulder" style="height:3em;">
+            </div>
+        </div>
+        <div class="marquee">
+            <marquee>Some cool stuff you can do!</marquee>
+        </div>
+        <!-- Template pages -->
+        <div id="about" style="display:none;">
+            <h2>About Me</h2>
+            <p>This is a placeholder for the About Me page. Add your info here!</p>
+        </div>
+        <div id="projects" style="display:none;">
+            <h2>My Projects</h2>
+            <p>This is a placeholder for the Projects page. Show off your VR hardware and 3D models here!</p>
+        </div>
+        <div id="photos" style="display:none;">
+            <h2>Cool Photos</h2>
+            <p>This is a placeholder for the Cool Photos page. Add your favorite images and GIFs here!</p>
+        </div>
+        <div id="blog" style="display:none;">
+            <h2>Blog</h2>
+            <p>This is a placeholder for the Blog page. Share your thoughts and updates here!</p>
+        </div>
     </div>
 
-    <h1>Welcome to the 90s Coolest Website!</h1>
-    <h2>Totally Rad, Right?</h2>
-
-    <div class="container">
-        <p>Get ready to be blown away by all the <span style="color: #ff4500; font-weight: bold;">cool</span> stuff we've got here!</p>
-        <a href="https://www.example.com" target="_blank">Check out our awesome site</a>
-
-        <button class="neon-button" onclick="alert('Welcome to the future of 90s web design!')">Click Me</button>
+    <!-- Windows 95 Taskbar -->
+    <div class="win95-taskbar">
+        <div class="start-btn" id="start-btn">
+            <img src="https://win98icons.alexmeub.com/icons/png/windows-0.png" alt="Start" class="start-icon">
+            <span>Start</span>
+        </div>
+        <div class="taskbar-spacer"></div>
+        <div class="taskbar-info">
+            <span>
+                <a href="#" id="rights-link">Rights</a> | 
+                <a href="https://www.researchgate.net/profile/Crispin-Thurlow/publication/259258527_Generation_Txt_The_sociolinguistics_of_young_people's_text-messaging/links/56555e1008ae1ef929771d8c/Generation-Txt-The-sociolinguistics-of-young-peoples-text-messaging.pdf?__cf_chl_rt_tk=yEikSBCZrMYb6.JRMyQV6GneXHHR9igL9Te4iQltkRc-1750445170-1.0.1.1-Se9fycUO0JxkrJk_OzkL.h3LWlBbz0DVtGWoo2GGHUU" target="_blank" id="docs-link">Docs</a>
+            </span>
+        </div>
+        <div class="taskbar-copyright">
+            &copy; 2025 Dewy
+        </div>
+        <!-- Clippy -->
+        <div class="clippy-container" id="clippy-container">
+            <img src="https://github.com/sanddew/MyRadWebsite/raw/main/clippy.gif" alt="Clippy" class="clippy-img" id="clippy-img">
+            <div class="clippy-tooltip" id="clippy-tooltip">
+                <button id="clippy-close" class="clippy-close" aria-label="Close Clippy">&times;</button>
+                <div>
+                    <b>Hey there!</b><br>
+                    Use the Start menu to open different pages.
+                </div>
+            </div>
+        </div>
     </div>
 
-    <div class="marquee">
-        <marquee>Rolling Text across the page...just like the good old days!</marquee>
+    <!-- Windows 95 Start Menu -->
+    <div class="start-menu" id="start-menu">
+        <div class="start-menu-header">
+            <img src="https://win98icons.alexmeub.com/icons/png/windows-0.png" style="height:22px;vertical-align:middle;margin-right:6px;">
+            <span>Start</span>
+        </div>
+        <a href="#" class="start-menu-link" id="about-link">
+            <img src="https://win98icons.alexmeub.com/icons/png/info_book-0.png" class="start-menu-icon">About Me
+        </a>
+        <a href="#" class="start-menu-link" id="projects-link">
+            <img src="https://win98icons.alexmeub.com/icons/png/computer_explorer-0.png" class="start-menu-icon">My Projects
+        </a>
+        <a href="#" class="start-menu-link" id="photos-link">
+            <img src="https://win98icons.alexmeub.com/icons/png/camera-3.png" class="start-menu-icon">Cool Photos
+        </a>
+        <a href="#" class="start-menu-link" id="blog-link">
+            <img src="https://win98icons.alexmeub.com/icons/png/notepad-2.png" class="start-menu-icon">Blog
+        </a>
+        <div class="start-menu-separator"></div>
+        <a href="#" class="start-menu-link" id="shutdown-link">
+            <img src="https://win98icons.alexmeub.com/icons/png/shut_down_normal-0.png" class="start-menu-icon">Shut Down...
+        </a>
     </div>
 
-    <div class="image-container">
-        <img src="https://via.placeholder.com/600x400.png" alt="Cool 90s Image">
+    <!-- BSOD overlay -->
+    <div id="bsod" class="bsod" style="display:none;">
+        <pre>
+A fatal exception 0E has occurred at 0028:C0011E36 in VXD VMM(01) + 00010E36.
+The current application will be terminated.
+
+*  Press CTRL+ALT+DEL to restart your computer. You will
+   lose any unsaved information in all applications.
+*  Press any key to continue
+
+-------------------------------
+Sorry, you've hit a blue screen of death!
+Please refresh the page to continue.
+        </pre>
     </div>
+
+    <script>
+    // Counter
+    function incrementCounter() {
+      const counter = document.getElementById('counter');
+      counter.textContent = parseInt(counter.textContent, 10) + 1;
+      counter.style.transform = 'scale(1.2)';
+      setTimeout(() => counter.style.transform = 'scale(1)', 100);
+    }
+    document.getElementById('click-btn').onclick = incrementCounter;
+
+    // Start Menu logic
+    const startBtn = document.getElementById('start-btn');
+    const startMenu = document.getElementById('start-menu');
+    const clippyContainer = document.getElementById('clippy-container');
+    const clippyImg = document.getElementById('clippy-img');
+    const clippyTooltip = document.getElementById('clippy-tooltip');
+    const clippyClose = document.getElementById('clippy-close');
+    let menuOpen = false;
+
+    startBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        menuOpen = !menuOpen;
+        startMenu.style.display = menuOpen ? 'block' : 'none';
+        startBtn.classList.toggle('active', menuOpen);
+
+        // Hide Clippy and tooltip when opening the start menu
+        if (menuOpen) {
+            clippyTooltip.style.display = 'none';
+            clippyContainer.classList.add('fade-out');
+        } else {
+            clippyContainer.classList.remove('fade-out');
+        }
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', function(e) {
+        if (menuOpen && !startMenu.contains(e.target) && e.target !== startBtn) {
+            startMenu.style.display = 'none';
+            startBtn.classList.remove('active');
+            menuOpen = false;
+            clippyContainer.classList.remove('fade-out');
+        }
+    });
+
+    // Clippy tooltip logic
+    clippyClose.onclick = function() {
+        clippyTooltip.style.display = 'none';
+        clippyContainer.classList.add('fade-out');
+    };
+
+    // Show tooltip on load
+    window.addEventListener('DOMContentLoaded', function() {
+        clippyTooltip.style.display = 'block';
+        clippyContainer.classList.remove('fade-out');
+    });
+
+    // Rights/Wrongs toggle
+    const rightsLink = document.getElementById('rights-link');
+    let rightsState = true;
+    rightsLink.addEventListener('click', function(e) {
+        e.preventDefault();
+        rightsState = !rightsState;
+        rightsLink.textContent = rightsState ? "Rights" : "Wrongs";
+    });
+
+    // Start menu navigation for template pages
+    function showPage(pageId) {
+        // Hide all pages
+        ['about','projects','photos','blog'].forEach(id => {
+            document.getElementById(id).style.display = 'none';
+        });
+        // Show selected
+        document.getElementById(pageId).style.display = 'block';
+        // Hide main content except taskbar
+        document.querySelector('.gif-container').style.display = 'none';
+        document.querySelector('.outdated-note-box').style.display = 'none';
+        document.querySelector('.container').style.display = 'none';
+        document.querySelector('.marquee').style.display = 'none';
+        // Close menu and show Clippy again
+        startMenu.style.display = 'none';
+        startBtn.classList.remove('active');
+        menuOpen = false;
+        clippyContainer.classList.remove('fade-out');
+    }
+    function showHome() {
+        // Hide all pages
+        ['about','projects','photos','blog'].forEach(id => {
+            document.getElementById(id).style.display = 'none';
+        });
+        // Show main content
+        document.querySelector('.gif-container').style.display = '';
+        document.querySelector('.outdated-note-box').style.display = '';
+        document.querySelector('.container').style.display = '';
+        document.querySelector('.marquee').style.display = '';
+        // Show Clippy
+        clippyContainer.classList.remove('fade-out');
+    }
+    document.getElementById('about-link').onclick = function(e) { e.preventDefault(); showPage('about'); };
+    document.getElementById('projects-link').onclick = function(e) { e.preventDefault(); showPage('projects'); };
+    document.getElementById('photos-link').onclick = function(e) { e.preventDefault(); showPage('photos'); };
+    document.getElementById('blog-link').onclick = function(e) { e.preventDefault(); showPage('blog'); };
+    // Clicking the logo returns home
+    document.querySelector('.gif-container img').onclick = function() { showHome(); };
+
+    // Shut Down (BSOD)
+    document.getElementById('shutdown-link').onclick = function(e) {
+        e.preventDefault();
+        document.getElementById('bsod').style.display = 'flex';
+        document.getElementById('main-content').style.filter = 'blur(2px)';
+        document.body.style.background = '#0000aa';
+    };
+    </script>
 </body>
 </html>
