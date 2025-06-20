@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>90s Aesthetic Webpage</title>
+    <style>
+        body {
+            background-color: #111;
+            font-family: 'Comic Sans MS', sans-serif;
+            color: #fff;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            font-size: 3em;
+            color: #ff00ff;
+            text-shadow: 3px 3px 5px #ff0000;
+            margin-top: 50px;
+            letter-spacing: 2px;
+        }
+
+        h2 {
+            color: #00ffff;
+            font-size: 2em;
+            text-shadow: 2px 2px 4px #00ff00;
+            margin-top: 30px;
+        }
+
+        .container {
+            width: 90%;
+            margin: 20px auto;
+            border: 2px dashed #ff00ff;
+            padding: 20px;
+            background: #222;
+        }
+
+        a {
+            color: #ffff00;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 1.5em;
+            transition: color 0.3s ease-in-out;
+        }
+
+        a:hover {
+            color: #ff4500;
+            text-decoration: underline;
+        }
+
+        .neon-button {
+            display: inline-block;
+            background-color: #ff00ff;
+            color: #fff;
+            padding: 15px 25px;
+            font-size: 1.5em;
+            border-radius: 10px;
+            border: none;
+            box-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .neon-button:hover {
+            background-color: #ff4500;
+            box-shadow: 0 0 10px #ff4500, 0 0 20px #ff4500, 0 0 30px #ff4500;
+        }
+
+        .marquee {
+            color: #ff4500;
+            font-size: 1.5em;
+            animation: marquee 10s linear infinite;
+            margin-top: 20px;
+        }
+
+        @keyframes marquee {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+
+        .image-container {
+            margin-top: 40px;
+        }
+
+        img {
+            max-width: 100%;
+            border: 5px solid #ff00ff;
+            box-shadow: 0 0 10px #ff00ff;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to the 90s Coolest Website!</h1>
+    <h2>Totally Rad, Right?</h2>
+
+    <div class="container">
+        <p>Get ready to be blown away by all the <span style="color: #ff4500; font-weight: bold;">cool</span> stuff we've got here!</p>
+        <a href="https://www.example.com" target="_blank">Check out our awesome site</a>
+
+        <button class="neon-button" onclick="alert('Welcome to the future of 90s web design!')">Click Me</button>
+    </div>
+
+    <div class="marquee">
+        <marquee>Rolling Text across the page...just like the good old days!</marquee>
+    </div>
+
+    <div class="image-container">
+        <img src="https://via.placeholder.com/600x400.png" alt="Cool 90s Image">
+    </div>
+</body>
+</html>
