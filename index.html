@@ -722,8 +722,8 @@
             <div class="clippy-tooltip" id="clippy-tooltip">
                 <button id="clippy-close" class="clippy-close" aria-label="Close Clippy">&times;</button>
                 <div>
-                    <b>Hey there!</b><br>
-                    Use the Start menu to open different pages.
+                    <b>Looks like you're looking at a rad website!</b><br>
+                    You can use the Start menu below to change pages.<br>
                 </div>
             </div>
         </div>
@@ -1043,6 +1043,42 @@ Please refresh the page to continue.
     window.addEventListener('DOMContentLoaded', () => {
         scheduleNotification();
     });
+
+    // Add event handlers for About Me and My Projects
+document.getElementById('about-link').onclick = function(e) {
+    e.preventDefault();
+    openWindow('about-window');
+    startMenu.style.display = 'none';
+    startBtn.classList.remove('active');
+    menuOpen = false;
+};
+document.getElementById('projects-link').onclick = function(e) {
+    e.preventDefault();
+    openWindow('projects-window');
+    startMenu.style.display = 'none';
+    startBtn.classList.remove('active');
+    menuOpen = false;
+};
+
+// Add event handler for Shut Down (BSOD)
+document.getElementById('shutdown-link').onclick = function(e) {
+    e.preventDefault();
+    document.getElementById('bsod').style.display = 'flex';
+    // Play BSOD sound if available
+    var audio = document.getElementById('bsod-audio');
+    if (audio) {
+        audio.currentTime = 0;
+        audio.play();
+    }
+    // Optionally hide other overlays/windows
+    ['about-window','projects-window','photos-window','blog-window'].forEach(function(winId){
+        var win = document.getElementById(winId);
+        if (win) win.style.display = 'none';
+    });
+    startMenu.style.display = 'none';
+    startBtn.classList.remove('active');
+    menuOpen = false;
+};
     </script>
 </body>
 </html>
