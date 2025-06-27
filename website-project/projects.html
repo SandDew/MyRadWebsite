@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Projects</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="projects.css">
+</head>
+<body>
+    <div class="win95-window95" id="projects-window">
+        <div class="win95-window95-titlebar">
+            <span>
+                <img src="https://win98icons.alexmeub.com/icons/png/computer_explorer-0.png" class="win95-window95-icon">
+                My Projects
+            </span>
+            <div class="win95-window95-controls">
+                <a href="index.html" class="win95-window95-btn" title="Back to Home"><b>✖</b></a>
+            </div>
+        </div>
+        <div class="win95-window95-content">
+            <div class="wii-menu">
+                <div class="wii-row">
+                    <div class="wii-channel" onclick="openProject('project1')">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Wii_disc_channel_icon.png" alt="Disc Channel">
+                        <span>Room</span>
+                    </div>
+                    <div class="wii-channel" onclick="openProject('project2')">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Wii_Mii_Channel_Logo.png" alt="Mii Channel">
+                        <span>"Lil Guy"</span>
+                    </div>
+                    <div class="wii-channel" onclick="openProject('project3')">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6d/Wii_Photo_Channel_Logo.png" alt="Photo Channel">
+                        <span>.</span>
+                    </div>
+                    <div class="wii-channel" onclick="openProject('project4')">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Wii_Shop_Channel_Logo.png" alt="Shop Channel">
+                        <span>6DoF</span>
+                    </div>
+                </div>
+                <div class="wii-row">
+                    <div class="wii-channel" onclick="openProject('project5')">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/1/1a/Wii_Forecast_Channel_Logo.png" alt="Forecast Channel">
+                        <span>Helmet</span>
+                    </div>
+                    <div class="wii-channel" onclick="openProject('project6')">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/8/8f/Wii_News_Channel_Logo.png" alt="News Channel">
+                        <span>External Display</span>
+                    </div>
+                    <div class="wii-channel" onclick="openProject('project7')">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6d/Wii_Photo_Channel_Logo.png" alt="Photo Channel">
+                        <span>Finger Spacing</span>
+                    </div>
+                    <div class="wii-channel" onclick="openProject('project8')">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Wii_Shop_Channel_Logo.png" alt="Shop Channel">
+                        <span>Video Editing</span>
+                    </div>
+                </div>
+            </div>
+            <div class="wii-bottom-bar">
+                <div class="wii-bottom-left">
+                    <div class="wii-btn">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6e/Wii_button_logo.png" alt="Wii Button">
+                    </div>
+                    <div class="wii-sd"></div>
+                </div>
+                <div class="wii-bottom-center">
+                    <span class="wii-time" id="wii-time">20:12</span>
+                    <span class="wii-date" id="wii-date">25.10. (So)</span>
+                </div>
+                <div class="wii-bottom-right">
+                    <div class="wii-mail">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/1/1c/Wii_Message_Board_Envelope.png" alt="Mail" />
+                        <span class="wii-mail-count">2</span>
+                    </div>
+                </div>
+            </div>
+            <div id="wii-project-modal" class="wii-modal" style="display:none;">
+                <div class="wii-modal-content">
+                    <span class="wii-modal-close" onclick="closeProjectModal()">&times;</span>
+                    <div id="wii-project-details"></div>
+                </div>
+            </div>
+        </div>
+        <div class="win95-window95-statusbar">
+            1 object(s)
+        </div>
+    </div>
+    <script src="js/projects.js"></script>
+    <script>
+function updateWiiTime() {
+    const now = new Date();
+    const pad = n => n.toString().padStart(2, '0');
+    document.getElementById('wii-time').textContent = pad(now.getHours()) + ':' + pad(now.getMinutes());
+    const days = ['So','Mo','Di','Mi','Do','Fr','Sa'];
+    document.getElementById('wii-date').textContent =
+        pad(now.getDate()) + '.' + pad(now.getMonth()+1) + '. (' + days[now.getDay()] + ')';
+}
+setInterval(updateWiiTime, 1000);
+updateWiiTime();
+</script>
+</body>
+</html>

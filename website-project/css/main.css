@@ -1,0 +1,1014 @@
+/* General Styles */
+html, body {
+    overflow-x: hidden;
+    height: 100%;
+}
+body {
+    background: url('https://github.com/SandDew/MyRadWebsite/raw/main/vapor.gif') no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Comic Sans MS', sans-serif;
+    color: #e0e0e0;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    padding-bottom: 38px;
+    transition: background 0.5s;
+    min-height: 100vh;
+}
+.main-content {
+    transition: filter 0.3s;
+}
+h1 {
+    font-size: 3em;
+    color: #00e6e6;
+    text-shadow: 3px 3px 8px #0ff, 0 0 10px #0ff;
+    margin-top: 50px;
+    letter-spacing: 2px;
+}
+h2 {
+    color: #ffb347;
+    font-size: 2em;
+    text-shadow: 2px 2px 8px #ffb347;
+    margin-top: 30px;
+}
+a {
+    color: #00ffd0;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 1.5em;
+    transition: color 0.3s ease-in-out;
+}
+a:hover {
+    color: #ff00cc;
+    text-decoration: underline;
+}
+.neon-button {
+    display: inline-block;
+    color: #fff;
+    padding: 15px 25px;
+    font-size: 1.5em;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    background: #23272f;
+    box-shadow: 0 0 10px #00ffd0, 0 0 20px #00ffd0;
+    transition: all 0.3s ease;
+}
+.neon-button:hover {
+    background-color: #00ffd0;
+    color: #181a20;
+    box-shadow: 0 0 20px #00ffd0, 0 0 40px #00ffd0;
+}
+.marquee {
+    color: #00ffd0;
+    font-size: 1.5em;
+    animation: marquee 10s linear infinite;
+    margin-top: 20px;
+}
+@keyframes marquee {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
+.image-container {
+    margin-top: 40px;
+}
+.outdated-note {
+    background: #23272f;
+    color: #ffe066;
+    padding: 12px 18px;
+    border: 1px solid #444;
+    border-radius: 6px;
+    font-size: 1.1em;
+    margin: 20px 0;
+    font-family: sans-serif;
+}
+.outdated-note-box {
+    background: #23272f;
+    color: #ffe066;
+    padding: 14px 22px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    font-size: 1.1em;
+    margin: 24px 0;
+    font-family: sans-serif;
+    display: inline-block;
+}
+.color-change {
+    font-weight: bold;
+    animation: colorFade 1.5s infinite alternate;
+}
+@keyframes colorFade {
+    0%   { color: #00ffd0; }
+    50%  { color: #ffb347; }
+    100% { color: #ff00cc; }
+}
+.generic-link {
+    color: #00ffd0;
+    text-decoration: underline;
+    font-size: inherit;
+    font-weight: normal;
+}
+.center-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+    flex-direction: row;
+}
+.crazy-counter {
+    font-family: 'Bangers', cursive;
+    font-size: 2.5em;
+    color: #00ffd0;
+    text-shadow: 2px 2px 0 #ff00cc, 4px 4px 0 #ffb347;
+    outline: none;
+    border: none;
+    transition: transform 0.1s;
+    background: transparent;
+}
+#click-btn {
+    outline: none !important;
+    border: none;
+    box-shadow: 0 0 10px #00ffd0;
+    font-size: 1.1em;
+    background: #23272f;
+    color: #00ffd0;
+    cursor: pointer;
+    padding: 0.5em 1.2em;
+    border-radius: 8px;
+    transition: background 0.2s, color 0.2s;
+}
+#click-btn:hover {
+    background: #00ffd0;
+    color: #181a20;
+}
+#click-btn:focus {
+    outline: none !important;
+    box-shadow: 0 0 0 2px #00ffd0 !important;
+}
+
+/* Windows 95 Taskbar styles */
+.win95-taskbar {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 38px;
+    background: linear-gradient(180deg, #c0c0c0 80%, #808080 100%);
+    border-top: 2px solid #fff;
+    border-bottom: 2px solid #404040;
+    display: flex;
+    align-items: center;
+    z-index: 200;
+    font-family: 'MS Sans Serif', Arial, sans-serif;
+    box-shadow: 0 -2px 0 #fff;
+    padding: 0 8px;
+}
+.start-btn {
+    display: flex;
+    align-items: center;
+    background: linear-gradient(180deg, #f0f0f0 70%, #b0b0b0 100%);
+    border: 2px outset #fff;
+    border-radius: 3px;
+    padding: 2px 14px 2px 6px;
+    font-weight: bold;
+    font-size: 1.1em;
+    color: #222;
+    cursor: pointer;
+    box-shadow: 1px 1px 0 #808080;
+    margin-right: 10px;
+    user-select: none;
+    position: relative;
+    z-index: 202;
+}
+.start-btn.active {
+    border: 2px inset #fff;
+    background: #b0b0b0;
+}
+.start-icon {
+    width: 22px;
+    height: 22px;
+    margin-right: 6px;
+    vertical-align: middle;
+}
+.taskbar-spacer {
+    flex: 1;
+}
+.taskbar-info {
+    color: #222;
+    font-size: 1em;
+    margin-right: 8px;
+}
+.taskbar-info a {
+    color: #000080;
+    text-decoration: underline;
+    margin: 0 4px;
+    font-size: 1em;
+    cursor: pointer;
+}
+.taskbar-info a:hover {
+    color: #ff00cc;
+}
+.taskbar-copyright {
+    color: #222;
+    font-size: 0.95em;
+    margin-left: 10px;
+    opacity: 0.7;
+    font-family: 'MS Sans Serif', Arial, sans-serif;
+}
+
+/* Clippy styles */
+.clippy-container {
+    position: absolute;
+    left: 8px;
+    bottom: 48px;
+    z-index: 300;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    transition: opacity 0.5s;
+}
+.clippy-img {
+    width: 110px;
+    height: auto;
+    image-rendering: pixelated;
+    cursor: pointer;
+    display: block;
+    transition: opacity 0.5s;
+}
+.clippy-container.fade-out,
+.clippy-img.fade-out {
+    opacity: 0;
+    pointer-events: none;
+}
+.clippy-tooltip {
+    display: block;
+    position: absolute;
+    left: 120px;
+    bottom: 30px;
+    background: #fffbe7;
+    color: #23234a;
+    border: 2px solid #b0b0b0;
+    border-radius: 10px 20px 20px 10px;
+    box-shadow: 2px 2px 8px #0002;
+    padding: 10px 18px 10px 14px;
+    font-size: 0.98em;
+    min-width: 160px;
+    max-width: 210px;
+    font-family: 'Segoe UI', 'Tahoma', 'Geneva', Verdana, sans-serif;
+    z-index: 301;
+    text-align: left;
+    line-height: 1.3;
+    border-left: 6px solid #ffe066;
+    border-bottom: 3px solid #ffe066;
+}
+.clippy-close {
+    position: absolute;
+    top: 4px;
+    right: 8px;
+    font-size: 1.3em;
+    color: #888;
+    cursor: pointer;
+    font-weight: bold;
+    background: none;
+    border: none;
+    padding: 0 10px;
+    line-height: 1;
+}
+.clippy-close:hover {
+    color: #c00;
+}
+
+/* Start Menu styles */
+.start-menu {
+    display: none;
+    position: fixed;
+    left: 8px;
+    bottom: 46px;
+    width: 240px;
+    background: #f0f0f0;
+    border: 2px outset #fff;
+    box-shadow: 4px 4px 0 #808080;
+    z-index: 300;
+    font-family: 'MS Sans Serif', Arial, sans-serif;
+    padding-bottom: 8px;
+}
+.start-menu-header {
+    background: linear-gradient(90deg, #000080 80%, #c0c0c0 100%);
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.1em;
+    padding: 10px 10px 10px 12px;
+    border-bottom: 2px solid #808080;
+    letter-spacing: 2px;
+    display: flex;
+    align-items: center;
+}
+.start-menu-link {
+    display: flex;
+    align-items: center;
+    padding: 10px 10px 10px 18px;
+    color: #000;
+    text-decoration: none;
+    font-size: 1em;
+    border-bottom: 1px solid #d0d0d0;
+    transition: background 0.2s, color 0.2s;
+}
+.start-menu-link:last-child {
+    border-bottom: none;
+}
+.start-menu-link:hover {
+    background: #000080;
+    color: #fff;
+}
+.start-menu-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+.start-menu-separator {
+    border-top: 1px solid #b0b0b0;
+    margin: 6px 0;
+}
+
+/* BSOD styles */
+.bsod {
+    background: #0000aa !important;
+    color: #fff !important;
+    min-height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0; left: 0;
+    z-index: 9999;
+    font-family: 'Consolas', 'Courier New', monospace;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 60px 40px;
+    font-size: 1.4em;
+}
+.bsod pre {
+    color: #fff;
+    font-size: 1.1em;
+    margin: 0;
+    white-space: pre-wrap;
+}
+
+/* Windows 95 window styles */
+.win95-window {
+    position: fixed;
+    top: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: 320px;
+    max-width: 95vw;
+    background: #f0f0f0;
+    border: 2px solid #000;
+    box-shadow: 8px 8px 0 #888;
+    z-index: 5000;
+    border-radius: 6px;
+    animation: win95pop 0.2s;
+}
+@keyframes win95pop {
+    from { transform: translateX(-50%) scale(0.9);}
+    to { transform: translateX(-50%) scale(1);}
+}
+.win95-titlebar {
+    background: linear-gradient(90deg, #000080 80%, #c0c0c0 100%);
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.1em;
+    padding: 8px 12px;
+    border-bottom: 2px solid #808080;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 6px 6px 0 0;
+    user-select: none;
+}
+.win95-window-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+.win95-close {
+    background: #c0c0c0;
+    border: 2px outset #fff;
+    color: #800;
+    font-size: 1.3em;
+    font-weight: bold;
+    border-radius: 4px;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: background 0.2s;
+}
+.win95-close:hover {
+    background: #ff0000;
+    color: #fff;
+    border: 2px inset #fff;
+}
+.win95-window-content {
+    padding: 24px 18px 18px 18px;
+    color: #222;
+    font-size: 1.1em;
+    background: #fff;
+    border-radius: 0 0 6px 6px;
+    text-align: center;
+}
+
+/* Windows 95 Window overlays for each page (full-page, styled like the screenshot) */
+.win95-window95 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    min-width: 0;
+    min-height: 0;
+    max-width: none;
+    max-height: none;
+    background: #f0f0f0;
+    border: 2px solid #000;
+    box-shadow: 8px 8px 0 #888;
+    z-index: 5000;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    animation: win95pop 0.2s;
+}
+.win95-window95-titlebar {
+    background: linear-gradient(90deg, #000080 80%, #c0c0c0 100%);
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.1em;
+    padding: 4px 12px 4px 8px;
+    border-bottom: 2px solid #808080;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 2px 2px 0 0;
+    user-select: none;
+    height: 32px;
+}
+.win95-window95-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+.win95-window95-controls {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+.win95-window95-btn {
+    background: #c0c0c0;
+    border: 2px outset #fff;
+    color: #800;
+    font-size: 1.1em;
+    font-weight: bold;
+    border-radius: 2px;
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+    margin-left: 2px;
+    transition: background 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.win95-window95-btn:hover {
+    background: #ff0000;
+    color: #fff;
+    border: 2px inset #fff;
+}
+.win95-window95-menubar {
+    background: #e0e0e0;
+    border-bottom: 1px solid #b0b0b0;
+    padding: 2px 8px;
+    font-size: 1em;
+    display: flex;
+    gap: 18px;
+    height: 26px;
+    align-items: center;
+    font-family: 'MS Sans Serif', Arial, sans-serif;
+}
+.win95-menu-item {
+    color: #222;
+    padding: 1px 8px;
+    border-radius: 2px;
+    cursor: pointer;
+    font-size: 1em;
+}
+.win95-menu-item:hover {
+    background: #000080;
+    color: #fff;
+}
+.win95-window95-content {
+    position: relative;
+    height: 100%;
+    min-height: 100%;
+    overflow-y: auto;
+    padding: 32px 18px 18px 18px;
+    color: #222;
+    font-size: 1.1em;
+    background: #fff;
+    text-align: center;
+    font-family: 'MS Sans Serif', Arial, sans-serif;
+}
+.win95-window95-statusbar {
+    background: #e0e0e0;
+    border-top: 2px solid #b0b0b0;
+    color: #222;
+    font-size: 0.98em;
+    padding: 4px 12px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    font-family: 'MS Sans Serif', Arial, sans-serif;
+    border-radius: 0 0 2px 2px;
+}
+
+/* Notification styles */
+#notification-container {
+    position: fixed;
+    right: 24px;
+    bottom: 54px;
+    z-index: 99999;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    pointer-events: none;
+}
+.win95-notification {
+    min-width: 260px;
+    max-width: 340px;
+    background: #f0f0f0;
+    border: 2px solid #fff;
+    border-bottom-color: #808080;
+    border-right-color: #808080;
+    box-shadow: 2px 2px 0 #808080, 4px 4px 0 #c0c0c0;
+    border-radius: 0;
+    margin-top: 12px;
+    font-family: 'MS Sans Serif', Arial, sans-serif;
+    animation: notif-pop 0.2s;
+    pointer-events: auto;
+    opacity: 1;
+    transition: opacity 0.7s;
+    padding: 0;
+}
+.win95-notification.fade-out {
+    opacity: 0;
+    transition: opacity 0.7s;
+}
+.win95-notif-titlebar {
+    background: #000080;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1em;
+    padding: 2px 8px 2px 8px;
+    border-bottom: 1px solid #808080;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    user-select: none;
+    font-family: 'MS Sans Serif', Arial, sans-serif;
+    height: 22px;
+}
+.win95-notif-close {
+    background: #c0c0c0;
+    border: 1px solid #fff;
+    border-bottom-color: #808080;
+    border-right-color: #808080;
+    color: #800;
+    font-size: 1em;
+    font-weight: bold;
+    border-radius: 0;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    margin-left: 8px;
+    transition: background 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+.win95-notif-close:hover {
+    background: #ff0000;
+    color: #fff;
+    border: 1px inset #fff;
+}
+.win95-notif-content {
+    padding: 10px 12px 10px 12px;
+    color: #222;
+    font-size: 1em;
+    background: #f0f0f0;
+    border-radius: 0;
+    text-align: left;
+    font-family: 'MS Sans Serif', Arial, sans-serif;
+}
+@keyframes notif-pop {
+    from { transform: translateY(30px) scale(0.95); opacity: 0; }
+    to   { transform: translateY(0) scale(1); opacity: 1; }
+}
+
+/* Polaroid look for draggable windows */
+.polaroid {
+    background: #fffbe7;
+    border: 2.5px solid #e0e0e0;
+    border-bottom: 18px solid #e0e0e0;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px #0003, 0 2px 8px #a97c50;
+    padding-top: 18px;
+    transition: box-shadow 0.2s, transform 0.2s;
+    cursor: grab;
+    user-select: none;
+    position: absolute;
+    overflow: visible;
+}
+.polaroid:active {
+    box-shadow: 0 2px 8px #a97c50;
+    cursor: grabbing;
+}
+.polaroid-photo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 8px auto;
+    width: 180px;
+    height: 180px;
+    background: #eee;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px #8882;
+}
+.polaroid-pin {
+    position: absolute;
+    top: -12px;
+    left: -12px;
+    width: 22px;
+    height: 22px;
+    background: radial-gradient(circle at 60% 40%, #e44 60%, #a00 100%);
+    border-radius: 50%;
+    border: 2.5px solid #fff;
+    box-shadow: 0 2px 8px #a97c50, 0 0 0 2px #a97c50;
+    z-index: 2;
+    pointer-events: none;
+    display: none !important;
+}
+.polaroid-caption {
+    font-family: 'Permanent Marker', 'Comic Sans MS', cursive, sans-serif;
+    font-size: 1.1em;
+    color: #5a4a2c;
+    margin-top: 8px;
+    margin-bottom: 2px;
+    text-align: center;
+    width: 90%;
+    word-break: break-word;
+    text-shadow: 0 1px 0 #fff, 0 2px 2px #bfa26a;
+}
+
+/* Hide default scrollbar, make space for custom slider */
+#photos-window .win95-window95-content {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    padding-right: 36px;
+}
+#photos-window .win95-window95-content::-webkit-scrollbar {
+    display: none;
+}
+
+/* Corkboard background for Cool Photos window */
+#photos-window .win95-window95-content {
+    background: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallpapers.com%2Fimages%2Fhd%2Fcork-board-background-2831-x-2027-tyrvg9u4ssoskknz.jpg&f=1&nofb=1&ipt=2087963505b5fde985ba0fe08c8c544c37e311b56fc5fbac3e6f9697f19be9c5') repeat #e7c98a !important;
+    scrollbar-width: thin;
+    scrollbar-color: #bfa26a #ffe066;
+    padding-right: 0;
+    overflow-y: auto !important;
+}
+#photos-window .win95-window95-content::-webkit-scrollbar {
+    width: 18px;
+    background: #ffe066;
+}
+#photos-window .win95-window95-content::-webkit-scrollbar-thumb {
+    background: #bfa26a;
+    border: 3px solid #ffe066;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px #a97c50;
+}
+#photos-window .win95-window95-content::-webkit-scrollbar-thumb:hover {
+    background: #a97c50;
+}
+#photos-window .win95-window95-content::-webkit-scrollbar-corner {
+    background: #ffe066;
+}
+#photos-window .win95-window95-content {
+    scrollbar-width: thin;
+    scrollbar-color: #bfa26a #ffe066;
+}
+
+/* Wii Menu Styles */
+.wii-menu {
+    background: linear-gradient(to bottom, #f8fafd 80%, #e3f0fa 100%);
+    border-radius: 18px;
+    box-shadow: 0 4px 32px #b5d6f7, 0 1.5px 8px #b5d6f7;
+    padding: 2.5em 1.5em 2em 1.5em;
+    max-width: 660px;
+    margin: 2em auto 1em auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2em;
+    border: 2.5px solid #b5d6f7;
+    position: relative;
+}
+.wii-row {
+    display: flex;
+    flex-direction: row;
+    gap: 1.2em;
+    justify-content: center;
+}
+.wii-channel {
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 2px 8px #b5d6f7, 0 1.5px 8px #b5d6f7;
+    width: 120px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: box-shadow 0.2s, transform 0.2s;
+    border: 2px solid #e3f0fa;
+    position: relative;
+    overflow: hidden;
+}
+.wii-channel:hover, .wii-channel:focus {
+    box-shadow: 0 0 0 4px #00bfff, 0 2px 8px #b5d6f7;
+    transform: scale(1.07);
+    z-index: 2;
+}
+.wii-channel img {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 0.3em;
+    filter: drop-shadow(0 1px 2px #b5d6f7);
+}
+.wii-channel span {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 1em;
+    color: #222;
+    text-align: center;
+    white-space: normal;
+    line-height: 1.2;
+    font-weight: 500;
+}
+.wii-modal {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.35);
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.wii-modal-content {
+    background: #f8fafd;
+    border-radius: 18px;
+    box-shadow: 0 4px 32px #b5d6f7;
+    padding: 2em 2em 1.5em 2em;
+    min-width: 320px;
+    max-width: 90vw;
+    position: relative;
+    text-align: center;
+}
+.wii-modal-close {
+    position: absolute;
+    top: 12px;
+    right: 18px;
+    font-size: 2em;
+    color: #00bfff;
+    cursor: pointer;
+    font-weight: bold;
+    background: none;
+    border: none;
+    z-index: 2;
+}
+@media (max-width: 700px) {
+    .wii-menu { max-width: 98vw; padding: 1em 0.2em; }
+    .wii-row { gap: 0.5em; }
+    .wii-channel { width: 80px; height: 70px; }
+    .wii-channel img { width: 32px; height: 32px; }
+    .wii-channel span { font-size: 0.8em; }
+    .wii-modal-content { min-width: 180px; padding: 1em 0.5em; }
+}
+@media (max-width: 600px) {
+    .win95-taskbar {
+        font-size: 0.9em;
+    }
+    .start-menu {
+        width: 170px;
+    }
+    .clippy-tooltip {
+        min-width: 110px;
+        max-width: 140px;
+        left: 90px;
+        padding: 8px 6px 8px 8px;
+    }
+    .bsod {
+        font-size: 1em;
+        padding: 30px 10px;
+    }
+    .win95-window {
+        width: 90%;
+        max-width: 300px;
+    }
+    .win95-window95-content {
+        padding: 12px 4px 8px 4px;
+        font-size: 1em;
+    }
+    .win95-window95 {
+        font-size: 0.95em;
+    }
+    /* --- Wii Menu Authentic Look --- */
+.wii-menu {
+    background: none;
+    border: none;
+    box-shadow: none;
+    padding: 0.5em 0 0 0;
+    max-width: 740px;
+    margin: 3em auto 0 auto;
+    gap: 1.5em;
+}
+.wii-row {
+    gap: 2.1em;
+    margin-bottom: 1.2em;
+}
+.wii-channel {
+    background: #f7f7f7;
+    border-radius: 18px;
+    box-shadow: 0 2px 6px #b5d6f7, 0 1.5px 8px #b5d6f7;
+    width: 170px;
+    height: 110px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: 2.5px solid #e3f0fa;
+    position: relative;
+    transition: box-shadow 0.15s, transform 0.11s;
+    overflow: hidden;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+.wii-channel:hover, .wii-channel:focus {
+    box-shadow: 0 0 0 5px #00bfff, 0 2px 8px #b5d6f7;
+    transform: scale(1.04);
+    z-index: 2;
+}
+.wii-channel:active {
+    transform: scale(0.97);
+    box-shadow: 0 0 0 2px #00bfff;
+}
+.wii-channel img {
+    width: 54px;
+    height: 54px;
+    margin-bottom: 0.2em;
+    filter: none;
+}
+.wii-channel span {
+    font-size: 1.13em;
+    color: #222;
+    font-weight: 600;
+    text-shadow: 0 1px 0 #fff, 0 2px 4px #b5d6f7;
+    letter-spacing: 0.01em;
+}
+.wii-menu {
+    border-radius: 0;
+    box-shadow: none;
+}
+.wii-modal-content {
+    border-radius: 18px;
+    box-shadow: 0 4px 32px #b5d6f7;
+}
+
+/* Subtle horizontal lines background */
+.win95-window95-content {
+    background: repeating-linear-gradient(
+        to bottom,
+        #f8fafd 0px,
+        #f8fafd 7px,
+        #e3f0fa 8px,
+        #f8fafd 16px
+    );
+}
+
+/* Wii Bottom Bar */
+.wii-bottom-bar {
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    height: 70px;
+    background: linear-gradient(to top, #e3f0fa 90%, #f8fafd 100%);
+    border-top: 2.5px solid #b5d6f7;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding: 0 60px 0 60px;
+    z-index: 10;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+.wii-bottom-left, .wii-bottom-right {
+    display: flex;
+    align-items: flex-end;
+    gap: 12px;
+}
+.wii-btn {
+    width: 54px;
+    height: 54px;
+    background: #e3f0fa;
+    border-radius: 50%;
+    box-shadow: 0 2px 8px #b5d6f7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 6px;
+}
+.wii-btn img {
+    width: 38px;
+    height: 38px;
+}
+.wii-sd {
+    width: 28px;
+    height: 32px;
+    background: url('https://upload.wikimedia.org/wikipedia/commons/2/2e/Wii_SD_Card_Icon.png') no-repeat center center;
+    background-size: contain;
+    margin-bottom: 10px;
+}
+.wii-bottom-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 6px;
+}
+.wii-time {
+    font-size: 2.1em;
+    color: #222;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+    text-shadow: 0 1px 0 #fff, 0 2px 4px #b5d6f7;
+}
+.wii-date {
+    font-size: 1.2em;
+    color: #222;
+    margin-top: 2px;
+    letter-spacing: 0.04em;
+    text-shadow: 0 1px 0 #fff, 0 2px 4px #b5d6f7;
+}
+.wii-mail {
+    position: relative;
+    width: 44px;
+    height: 44px;
+    margin-bottom: 10px;
+}
+.wii-mail img {
+    width: 44px;
+    height: 44px;
+}
+.wii-mail-count {
+    position: absolute;
+    bottom: 2px;
+    right: 2px;
+    background: #fff;
+    color: #00bfff;
+    font-size: 1em;
+    font-weight: bold;
+    border-radius: 50%;
+    padding: 2px 6px;
+    box-shadow: 0 1px 4px #b5d6f7;
+}
+
+/* Hide Windows 95 status bar */
+.win95-window95-statusbar {
+    display: none !important;
+}
+
+/* Responsive Wii menu */
+@media (max-width: 900px) {
+    .wii-menu { max-width: 99vw; }
+    .wii-row { gap: 0.7em; }
+    .wii-channel { width: 100px; height: 70px; }
+    .wii-channel img { width: 32px; height: 32px; }
+    .wii-channel span { font-size: 0.8em; }
+    .wii-bottom-bar { padding: 0 10px 0 10px; }
+    .wii-btn { width: 32px; height: 32px; }
+    .wii-btn img { width: 22px; height: 22px; }
+    .wii-sd { width: 16px; height: 18px; }
+    .wii-mail, .wii-mail img { width: 22px; height: 22px; }
+}
+}
+

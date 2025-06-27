@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>My Radical Webpage, Enjoy Y'all</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <audio id="bsod-audio" src="https://github.com/sanddew/MyRadWebsite/raw/main/bsod-buzz.mp3"></audio>
+    <div class="main-content" id="main-content">
+        <div class="gif-container">
+            <img src="https://github.com/sanddew/MyRadWebsite/raw/main/cooltext485016549783963.gif" alt="My Radical Webpage">
+        </div>
+        <div class="outdated-note-box">
+            Note: This website is <span class="color-change">out of date</span>, please go to my new website: 
+            <a href="https://www.youtube.com/watch?v=59O0TgS7EMI" target="_blank" class="generic-link">here</a>
+        </div>
+        <div class="container">
+            <p>Check out the <img src="https://github.com/sanddew/MyRadWebsite/raw/main/2025-06-20-CLICK.gif" alt="Click" style="height:5em;vertical-align:middle;">
+            counter</p>
+            <div class="center-container">
+                <img src="https://github.com/sanddew/MyRadWebsite/raw/main/world.gif" alt="Left Shoulder" style="height:3em;">
+                <span id="counter" class="crazy-counter">0</span>
+                <button id="click-btn">
+                    CLICK ME
+                </button>
+                <img src="https://github.com/sanddew/MyRadWebsite/raw/main/spinningcd.gif" alt="Right Shoulder" style="height:3em;">
+            </div>
+        </div>
+        <div class="marquee">
+            <marquee>Some cool stuff you can do!</marquee>
+        </div>
+    </div>
+
+    <!-- Windows 95 Taskbar -->
+    <div class="win95-taskbar">
+        <div class="start-btn" id="start-btn">
+            <img src="https://win98icons.alexmeub.com/icons/png/windows-0.png" alt="Start" class="start-icon">
+            <span>Start</span>
+        </div>
+        <div class="taskbar-spacer"></div>
+        <div class="taskbar-info">
+            <span>
+                <a href="#" id="rights-link">Rights</a> | 
+                <a href="https://www.researchgate.net/profile/Crispin-Thurlow/publication/259258527_Generation_Txt_The_sociolinguistics_of_young_people's_text-messaging/links/56555e1008ae1ef929771d8c/Generation-Txt-The-sociolinguistics-of-young-peoples-text-messaging.pdf?__cf_chl_rt_tk=yEikSBCZrMYb6.JRMyQV6GneXHHR9igL9Te4iQltkRc-1750445170-1.0.1.1-Se9fycUO0JxkrJk_OzkL.h3LWlBbz0DVtGWoo2GGHUU" target="_blank" id="docs-link">Docs</a>
+            </span>
+        </div>
+        <div class="taskbar-copyright">
+            &copy; 2025 Dewy
+        </div>
+        <!-- Clippy -->
+        <div class="clippy-container" id="clippy-container">
+            <img src="https://github.com/sanddew/MyRadWebsite/raw/main/clippy.gif" alt="Clippy" class="clippy-img" id="clippy-img">
+            <div class="clippy-tooltip" id="clippy-tooltip">
+                <button id="clippy-close" class="clippy-close" aria-label="Close Clippy">&times;</button>
+                <div>
+                    <b>Looks like you're looking at a rad website!</b><br>
+                    You can use the Start menu below to change pages.<br>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Windows 95 Start Menu -->
+    <div class="start-menu" id="start-menu">
+        <div class="start-menu-header">
+            <img src="https://win98icons.alexmeub.com/icons/png/windows-0.png" style="height:22px;vertical-align:middle;margin-right:6px;">
+            <span>Start</span>
+        </div>
+        <div class="start-menu-separator"></div>
+        <a href="about.html" class="start-menu-link" id="about-link">
+            <img src="https://win98icons.alexmeub.com/icons/png/info_book-0.png" class="start-menu-icon">About Me
+        </a>
+        <a href="projects.html" class="start-menu-link" id="projects-link">
+            <img src="https://win98icons.alexmeub.com/icons/png/computer_explorer-0.png" class="start-menu-icon">My Projects
+        </a>
+        <a href="photos.html" class="start-menu-link" id="photos-link">
+            <img src="https://win98icons.alexmeub.com/icons/png/camera-3.png" class="start-menu-icon">Cool Photos
+        </a>
+        <a href="blog.html" class="start-menu-link" id="blog-link">
+            <img src="https://win98icons.alexmeub.com/icons/png/notepad-2.png" class="start-menu-icon">Blog
+        </a>
+        <div class="start-menu-separator"></div>
+        <a href="#" class="start-menu-link" id="shutdown-link">
+            <img src="https://win98icons.alexmeub.com/icons/png/shut_down_normal-0.png" class="start-menu-icon">Shut Down...
+        </a>
+    </div>
+
+    <!-- BSOD overlay -->
+    <div id="bsod" class="bsod" style="display:none;">
+        <pre>
+A fatal exception 0E has occurred at 0028:C0011E36 in VXD VMM(01) + 00010E36.
+The current application will be terminated.
+
+*  Press CTRL+ALT+DEL to restart your computer. You will
+   lose any unsaved information in all applications.
+*  Press any key to continue
+
+-------------------------------
+Please refresh the page to continue.
+
+        </pre>
+    </div>
+
+    <div id="notification-container"></div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
