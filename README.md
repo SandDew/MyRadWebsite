@@ -1,7 +1,7 @@
-# Website Project
+# THIS PAGE IS STILL UNDER CONSTRUCTION
 
 ## Overview
-This project is a simple multi-page website that includes an About Me page, a Cool Photos page, a Blog page, and a My Projects page. Each page has its own HTML, CSS, and JavaScript files for better organization and maintainability.
+As an interactive way to show people my projects, photos, and widgets, I decided to create this webpage. At the moment, the landing page is functional with some setup for photos, about me, and various other functions. 
 
 ## Project Structure
 ```
@@ -25,18 +25,3 @@ website-project
 │   └── projects.js    # JavaScript for the My Projects page
 └── README.md         # Documentation for the project
 ```
-
-## Setup Instructions
-1. Clone the repository or download the project files.
-2. Open the `index.html` file in a web browser to view the website.
-3. Each page can be accessed via the navigation links provided in the `index.html`.
-
-## Features
-- Responsive design that adapts to different screen sizes.
-- Each page has its own unique styling and functionality.
-- JavaScript files are organized by page for easier management.
-
-## Future Improvements
-- Add more content to each page.
-- Implement a backend for dynamic content.
-- Optimize images and assets for faster loading times.
