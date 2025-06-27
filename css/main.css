@@ -4,7 +4,7 @@ html, body {
     height: 100%;
 }
 body {
-    background: url('https://github.com/SandDew/MyRadWebsite/blob/main/media/Vapor.gif') no-repeat center center fixed;
+    background: url('https://raw.githubusercontent.com/SandDew/MyRadWebsite/refs/heads/main/media/Vapor.gif') no-repeat center center fixed;
     background-size: cover;
     font-family: 'Comic Sans MS', sans-serif;
     color: #e0e0e0;
