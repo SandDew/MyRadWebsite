@@ -9,73 +9,43 @@
 }
 
 .social-btn {
-    width: 120px;
-    height: 32px;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    background: #c0c0c0;
-    border: 2.5px solid #000;
-    border-radius: 0;
-    box-shadow:
-        2px 2px 0 #fff,
-        4px 4px 0 #808080,
-        inset 1px 1px 0 #fff,
-        inset -2px -2px 0 #808080;
-    font-family: 'Press Start 2P', 'Courier New', Courier, monospace;
-    font-size: 13px;
-    color: #111;
-    text-decoration: none;
-    padding: 0 8px;
-    transition: background 0.1s, box-shadow 0.1s;
-    gap: 8px;
-    image-rendering: pixelated;
-}
-
-.social-btn:hover {
-    background: #e0e0e0;
-    box-shadow:
-        2px 2px 0 #fff,
-        4px 4px 0 #000,
-        inset 1px 1px 0 #fff,
-        inset -2px -2px 0 #000;
-    color: #000;
-}
-
-.social-icon {
-    width: 18px;
-    height: 18px;
-    margin-right: 8px;
-    flex-shrink: 0;
-    display: inline-block;
-    image-rendering: pixelated;
+    display: block;
+    width: 120px;   /* Set to your button image width */
+    height: 32px;   /* Set to your button image height */
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
+    border: none;
+    padding: 0;
+    margin: 0;
+    outline: none;
+    cursor: pointer;
+    transition: filter 0.1s;
+    image-rendering: pixelated;
 }
 
-/* GitHub icon */
-.github-btn .social-icon {
-    background-image: url('https://raw.githubusercontent.com/SandDew/MyRadWebsite/refs/heads/main/media/Icons/Github-A.png');
+/* GitHub button */
+.github-btn {
+    background-image: url('https://raw.githubusercontent.com/SandDew/MyRadWebsite/refs/heads/main/media/Icons/Github-A.PNG');
 }
-.github-btn:active .social-icon {
-    background-image: url('https://raw.githubusercontent.com/SandDew/MyRadWebsite/refs/heads/main/media/Icons/Github-B.png');
-}
-
-/* Ko-Fi icon */
-.kofi-btn .social-icon {
-    background-image: url('https://raw.githubusercontent.com/SandDew/MyRadWebsite/refs/heads/main/media/Icons/Ko-Fi-A.png');
-}
-.kofi-btn:active .social-icon {
-    background-image: url('https://raw.githubusercontent.com/SandDew/MyRadWebsite/refs/heads/main/media/Icons/Ko-Fi-B.png');
+.github-btn:active {
+    background-image: url('https://raw.githubusercontent.com/SandDew/MyRadWebsite/refs/heads/main/media/Icons/Github-B.PNG');
 }
 
-/* YouTube icon */
-.youtube-btn .social-icon {
-    background-image: url('https://raw.githubusercontent.com/SandDew/MyRadWebsite/refs/heads/main/media/Icons/YT-A.png');
+/* Ko-Fi button */
+.kofi-btn {
+    background-image: url('https://raw.githubusercontent.com/SandDew/MyRadWebsite/refs/heads/main/media/Icons/Ko-Fi-A.PNG');
 }
-.youtube-btn:active .social-icon {
-    background-image: url('https://raw.githubusercontent.com/SandDew/MyRadWebsite/refs/heads/main/media/Icons/YT-B.png');
+.kofi-btn:active {
+    background-image: url('https://raw.githubusercontent.com/SandDew/MyRadWebsite/refs/heads/main/media/Icons/Ko-Fi-B.PNG');
+}
+
+/* YouTube button */
+.youtube-btn {
+    background-image: url('https://raw.githubusercontent.com/SandDew/MyRadWebsite/refs/heads/main/media/Icons/YT-A.PNG');
+}
+.youtube-btn:active {
+    background-image: url('https://raw.githubusercontent.com/SandDew/MyRadWebsite/refs/heads/main/media/Icons/YT-B.PNG');
 }
 
 /* Hide any social-links inside content area */
