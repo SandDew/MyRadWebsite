@@ -1,0 +1,149 @@
+html, body {
+    overflow-x: hidden;
+    height: 100%;
+}
+body {
+    background: url('https://raw.githubusercontent.com/SandDew/MyRadWebsite/refs/heads/main/media/Vapor.gif') no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Comic Sans MS', sans-serif;
+    color: #e0e0e0;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    padding-bottom: 38px;
+    transition: background 0.5s;
+    min-height: 100vh;
+}
+.main-content {
+    transition: filter 0.3s;
+}
+h1, h2 {
+    font-family: inherit;
+    margin-top: 30px;
+}
+h1 {
+    font-size: 3em;
+    color: #00e6e6;
+    text-shadow: 3px 3px 8px #0ff, 0 0 10px #0ff;
+    margin-top: 50px;
+    letter-spacing: 2px;
+}
+h2 {
+    color: #ffb347;
+    font-size: 2em;
+    text-shadow: 2px 2px 8px #ffb347;
+}
+a {
+    color: #00ffd0;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 1.5em;
+    transition: color 0.3s ease-in-out;
+}
+a:hover {
+    color: #ff00cc;
+    text-decoration: underline;
+}
+.neon-button {
+    display: inline-block;
+    color: #fff;
+    padding: 15px 25px;
+    font-size: 1.5em;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    background: #23272f;
+    box-shadow: 0 0 10px #00ffd0, 0 0 20px #00ffd0;
+    transition: all 0.3s ease;
+}
+.neon-button:hover {
+    background-color: #00ffd0;
+    color: #181a20;
+    box-shadow: 0 0 20px #00ffd0, 0 0 40px #00ffd0;
+}
+.marquee {
+    color: #00ffd0;
+    font-size: 1.5em;
+    animation: marquee 10s linear infinite;
+    margin-top: 20px;
+}
+@keyframes marquee {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
+.image-container {
+    margin-top: 40px;
+}
+.outdated-note,
+.outdated-note-box {
+    background: #23272f;
+    color: #ffe066;
+    font-family: sans-serif;
+}
+.outdated-note {
+    padding: 12px 18px;
+    border: 1px solid #444;
+    border-radius: 6px;
+    font-size: 1.1em;
+    margin: 20px 0;
+}
+.outdated-note-box {
+    padding: 14px 22px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    font-size: 1.1em;
+    margin: 24px 0;
+    display: inline-block;
+}
+.color-change {
+    font-weight: bold;
+    animation: colorFade 1.5s infinite alternate;
+}
+@keyframes colorFade {
+    0%   { color: #00ffd0; }
+    50%  { color: #ffb347; }
+    100% { color: #ff00cc; }
+}
+.generic-link {
+    color: #00ffd0;
+    text-decoration: underline;
+    font-size: inherit;
+    font-weight: normal;
+}
+.center-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+    flex-direction: row;
+}
+.crazy-counter {
+    font-family: 'Bangers', cursive;
+    font-size: 2.5em;
+    color: #00ffd0;
+    text-shadow: 2px 2px 0 #ff00cc, 4px 4px 0 #ffb347;
+    outline: none;
+    border: none;
+    transition: transform 0.1s;
+    background: transparent;
+}
+#click-btn {
+    outline: none !important;
+    border: none;
+    box-shadow: 0 0 10px #00ffd0;
+    font-size: 1.1em;
+    background: #23272f;
+    color: #00ffd0;
+    cursor: pointer;
+    padding: 0.5em 1.2em;
+    border-radius: 8px;
+    transition: background 0.2s, color 0.2s;
+}
+#click-btn:hover {
+    background: #00ffd0;
+    color: #181a20;
+}
+#click-btn:focus {
+    outline: none !important;
+    box-shadow: 0 0 0 2px #00ffd0 !important;
+}

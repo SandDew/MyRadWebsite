@@ -20,5 +20,9 @@
   "click_gif": "media/Click.gif",
   "world_gif": "media/World.gif",
   "spinning_cd_gif": "media/SpinningCD.gif",
-  "clippy_gif": "media/Clippy.gif"
+  "clippy_gif": "media/Clippy.gif",
+  "solitaire_icon": "https://win98icons.alexmeub.com/icons/png/game_hearts.png",
+  "paint_icon": "https://win98icons.alexmeub.com/icons/png/no2-0.png",
+  "clock_icon": "https://win98icons.alexmeub.com/icons/png/clock-1.png",
+  "calculator_icon": "https://win98icons.alexmeub.com/icons/png/no2-0.png"
 }

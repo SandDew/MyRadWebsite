@@ -1,0 +1,248 @@
+/* Clippy styles */
+.clippy-container {
+    position: absolute;
+    left: 8px;
+    bottom: 48px;
+    z-index: 300;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    transition: opacity 0.5s;
+}
+.clippy-img {
+    width: 110px;
+    height: auto;
+    image-rendering: pixelated;
+    cursor: pointer;
+    display: block;
+    transition: opacity 0.5s;
+}
+
+
+/* Polaroid look for draggable windows */
+.polaroid {
+    background: #fffbe7;
+    border: 2.5px solid #e0e0e0;
+    border-bottom: 18px solid #e0e0e0;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px #0003, 0 2px 8px #a97c50;
+    padding-top: 18px;
+    transition: box-shadow 0.2s, transform 0.2s;
+    cursor: grab;
+    user-select: none;
+    position: absolute;
+    overflow: visible;
+}
+.polaroid:active {
+    box-shadow: 0 2px 8px #a97c50;
+    cursor: grabbing;
+}
+.polaroid-photo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 8px auto;
+    width: 180px;
+    height: 180px;
+    background: #eee;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px #8882;
+}
+.polaroid-pin {
+    position: absolute;
+    top: -12px;
+    left: -12px;
+    width: 22px;
+    height: 22px;
+    background: radial-gradient(circle at 60% 40%, #e44 60%, #a00 100%);
+    border-radius: 50%;
+    border: 2.5px solid #fff;
+    box-shadow: 0 2px 8px #a97c50, 0 0 0 2px #a97c50;
+    z-index: 2;
+    pointer-events: none;
+    display: none !important;
+}
+.polaroid-caption {
+    font-family: 'Permanent Marker', 'Comic Sans MS', cursive, sans-serif;
+    font-size: 1.1em;
+    color: #5a4a2c;
+    margin-top: 8px;
+    margin-bottom: 2px;
+    text-align: center;
+    width: 90%;
+    word-break: break-word;
+    text-shadow: 0 1px 0 #fff, 0 2px 2px #bfa26a;
+}
+/* Explorer grid for file icons */
+.explorer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+    gap: 32px 18px;
+    justify-items: center;
+    align-items: start;
+    margin-top: 8px;
+}
+.explorer-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.explorer-file-icon {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 8px;
+    image-rendering: pixelated;
+    box-shadow: 0 2px 8px #8882;
+    background: #fff;
+    border-radius: 8px;
+    border: 1.5px solid #e0e0e0;
+}
+.explorer-file-link {
+    color: #000080;
+    font-size: 1em;
+    text-decoration: none;
+    font-family: 'MS Sans Serif', Arial, sans-serif;
+    margin-top: 2px;
+    transition: color 0.2s;
+}
+.explorer-file-link:hover {
+    color: #ff00cc;
+    text-decoration: underline;
+}
+/* Explorer Folder Section Styles */
+.explorer-folder {
+    width: 100%;
+    max-width: 900px;
+    margin: 40px auto 0 auto;
+    background: #f0f0f0;
+    border: 2px solid #000;
+    border-radius: 8px;
+    box-shadow: 8px 8px 0 #888;
+    font-family: 'MS Sans Serif', Arial, sans-serif;
+}
+.explorer-folder-titlebar {
+    background: linear-gradient(90deg, #000080 80%, #c0c0c0 100%);
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.15em;
+    padding: 12px 18px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-bottom: 2px solid #808080;
+    border-radius: 8px 8px 0 0;
+    letter-spacing: 1px;
+    user-select: none;
+}
+.explorer-folder-icon {
+    width: 28px;
+    height: 28px;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+.explorer-folder-content {
+    padding: 32px 24px;
+    background: repeating-linear-gradient(
+        to bottom,
+        #f8fafd 0px,
+        #f8fafd 7px,
+        #e3f0fa 8px,
+        #f8fafd 16px
+    );
+    min-height: 220px;
+    border-radius: 0 0 8px 8px;
+}
+.explorer-folder-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 38px 28px;
+    justify-items: center;
+    align-items: start;
+    width: 100%;
+}
+.explorer-folder-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    min-width: 0;
+    padding: 8px 0;
+    transition: background 0.2s;
+    border-radius: 6px;
+}
+.explorer-folder-item:hover {
+    background: #e3f0fa;
+}
+.explorer-folder-file-icon {
+    width: 56px;
+    height: 56px;
+    margin-bottom: 10px;
+    image-rendering: pixelated;
+    background: #fff;
+    border-radius: 10px;
+    border: 2px solid #e0e0e0;
+    box-shadow: 0 2px 8px #8882;
+}
+.explorer-folder-file-link {
+    color: #000080;
+    font-size: 1.08em;
+    text-decoration: none;
+    font-family: 'MS Sans Serif', Arial, sans-serif;
+    margin-top: 2px;
+    transition: color 0.2s;
+    word-break: break-word;
+    max-width: 100px;
+}
+.explorer-folder-file-link:hover {
+    color: #ff00cc;
+    text-decoration: underline;
+}
+/* Hide default scrollbar, make space for custom slider */
+#photos-window .win95-window95-content {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    padding-right: 36px;
+}
+#photos-window .win95-window95-content::-webkit-scrollbar {
+    display: none;
+}
+/* Corkboard background for Cool Photos window */
+#photos-window .win95-window95-content {
+    background: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallpapers.com%2Fimages%2Fhd%2Fcork-board-background-2831-x-2027-tyrvg9u4ssoskknz.jpg&f=1&nofb=1&ipt=2087963505b5fde985ba0fe08c8c544c37e311b56fc5fbac3e6f9697f19be9c5') repeat #e7c98a !important;
+    scrollbar-width: thin;
+    scrollbar-color: #bfa26a #ffe066;
+    padding-right: 0;
+    overflow-y: auto !important;
+}
+#photos-window .win95-window95-content::-webkit-scrollbar {
+    width: 18px;
+    background: #ffe066;
+}
+#photos-window .win95-window95-content::-webkit-scrollbar-thumb {
+    background: #bfa26a;
+    border: 3px solid #ffe066;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px #a97c50;
+}
+#photos-window .win95-window95-content::-webkit-scrollbar-thumb:hover {
+    background: #a97c50;
+}
+#photos-window .win95-window95-content::-webkit-scrollbar-corner {
+    background: #ffe066;
+}
+#photos-window .win95-window95-content {
+    scrollbar-width: thin;
+    scrollbar-color: #bfa26a #ffe066;
+}
+/* Subtle horizontal lines background */
+.win95-window95-content {
+    background: repeating-linear-gradient(
+        to bottom,
+        #f8fafd 0px,
+        #f8fafd 7px,
+        #e3f0fa 8px,
+        #f8fafd 16px
+    );
+}

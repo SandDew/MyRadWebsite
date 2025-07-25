@@ -4,10 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Me</title>
-    <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/about.css">
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/win95.css">
+    <link rel="stylesheet" href="css/extras.css">
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
+<div id="screen-warning" style="display:none; position:fixed; top:0; width:100vw; height:100vh; background:#b3b1b1; color:#222; z-index:99999; font-size:1.3em; align-items:center; justify-content:center; text-align:center;">
+    <div style="width:50%;max-width:700px;display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;margin:auto;">
+        <b><p>⚠️<br> Your screen is too small for this page. </p>
+        <p>This website is designed for desktop usage.</p>
+        <p>Please use a larger display for the best experience.</p></b>
+        <a id="ignore-warning-btn" style="margin-top:1em; color:#888; font-size:0.9em; cursor:pointer;">(ignore)</a>
+    </div>
+</div>
 <body>
     <div class="win95-window95" id="about-window" data-bg-source="about_me_background" style="background-size: cover; background-position: center;">
         <div class="win95-window95-titlebar">

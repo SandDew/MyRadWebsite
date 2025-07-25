@@ -4,14 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>My Radical Webpage, Enjoy Y'all</title>
+    <title>Dewy's Geocities Webpage</title>
     <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/win95.css">
+    <link rel="stylesheet" href="css/extras.css">
+    
 </head>
+<div id="screen-warning" style="display:none; position:fixed; top:0; width:100vw; height:100vh; background:#b3b1b1; color:#222; z-index:99999; font-family:'Press Start 2P', 'Calibri', sans-serif; font-size:1.3em; align-items:center; justify-content:center; text-align:center;">
+    <div style="width:50%;max-width:700px;display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;margin:auto;">
+        <b><p>⚠️<br> Your screen is too small for this page. </p>
+        <p>This website is designed for desktop usage.</p>
+        <p>Please use a larger display for the best experience.</p></b>
+        <a id="ignore-warning-btn" style="margin-top:1em; color:#888; font-size:0.9em; cursor:pointer;">(ignore)</a>
+    </div>
+</div>
 <body>
     <div class="main-content" id="main-content">
         <div class="gif-container">
-            <img data-source="flames_gif" alt="My Radical Webpage">
+            <img data-source="flames_gif" alt="My Webpage">
         </div>
         <div class="outdated-note-box">
             Note: This website is <span class="color-change">out of date</span>, please go to my new website: 
@@ -31,6 +42,45 @@
         </div>
         <div class="marquee">
             <marquee>Some cool stuff you can do!</marquee>
+        </div>
+
+        <!-- Explorer Folder as Win95 Window -->
+        <div class="win95-window2 explorer-folder" style="margin:40px auto 0 auto; max-width:900px;">
+            <div class="win95-titlebar">
+                <img data-source="computer_explorer_icon" class="win95-window-icon" alt="Explorer">
+                <span>Explorer</span>
+                <!-- Optional: Add a close button if you want -->
+                <!-- <button class="win95-close" title="Close">&times;</button> -->
+            </div>
+            <div class="win95-window-content" style="background: repeating-linear-gradient(to bottom,#f8fafd 0px,#f8fafd 7px,#e3f0fa 8px,#f8fafd 16px); min-height:220px;">
+                <div class="explorer-folder-grid">
+                    <div class="explorer-folder-item">
+                        <img data-source="info_book_icon" class="explorer-folder-file-icon" alt="About Me">
+                        <div><a href="about.html" class="explorer-folder-file-link">About Me</a></div>
+                    </div>
+                    <div class="explorer-folder-item">
+                        <img data-source="computer_explorer_icon" class="explorer-folder-file-icon" alt="My Projects">
+                        <div><a href="projects.html" class="explorer-folder-file-link">My Projects</a></div>
+                    </div>
+                    <div class="explorer-folder-item">
+                        <img data-source="camera_icon" class="explorer-folder-file-icon" alt="Cool Photos">
+                        <div><a href="photos.html" class="explorer-folder-file-link">Cool Photos</a></div>
+                    </div>
+                    <div class="explorer-folder-item">
+                        <img data-source="notepad_icon" class="explorer-folder-file-icon" alt="Blog">
+                        <div><a href="blog.html" class="explorer-folder-file-link">Blog</a></div>
+                    </div>
+                    <div class="explorer-folder-item">
+                        <img data-source="pinball_icon" class="explorer-folder-file-icon" alt="3D Pinball">
+                        <div><a href="#" class="explorer-folder-file-link" id="pinball-link">3D Pinball</a></div>
+                    </div>
+                    <div class="explorer-folder-item">
+                        <img data-source="calculator_icon" class="explorer-folder-file-icon" alt="Info">
+                        <div><a href="#" class="explorer-folder-file-link" id="info-link">Info</a></div>
+                    </div>
+
+                </div>
+            </div>
         </div>
     </div>
 
@@ -53,13 +103,6 @@
         <!-- Clippy -->
         <div class="clippy-container" id="clippy-container">
             <img data-source="clippy_gif" alt="Clippy" class="clippy-img" id="clippy-img">
-            <div class="clippy-tooltip" id="clippy-tooltip">
-                <button id="clippy-close" class="clippy-close" aria-label="Close Clippy">&times;</button>
-                <div>
-                    <b>Looks like you're looking at a rad website!</b><br>
-                    You can use the Start menu below to change pages.<br>
-                </div>
-            </div>
         </div>
     </div>
 
@@ -70,20 +113,23 @@
             <span>Start</span>
         </div>
         <div class="start-menu-separator"></div>
-        <a href="about.html" class="start-menu-link" id="about-link">
-            <img data-source="info_book_icon" class="start-menu-icon">About Me
+        <a href="#" class="start-menu-link bsod-trigger" id="calculator-link">
+            <img data-source="calculator_icon" class="start-menu-icon">Calculator
         </a>
-        <a href="projects.html" class="start-menu-link" id="projects-link">
-            <img data-source="computer_explorer_icon" class="start-menu-icon">My Projects
+        <a href="#" class="start-menu-link bsod-trigger" id="clock-link">
+            <img data-source="clock_icon" class="start-menu-icon">Clock
         </a>
-        <a href="photos.html" class="start-menu-link" id="photos-link">
-            <img data-source="camera_icon" class="start-menu-icon">Cool Photos
+        <a href="#" class="start-menu-link bsod-trigger" id="notepad-link">
+            <img data-source="notepad_icon" class="start-menu-icon">Notepad
         </a>
-        <a href="blog.html" class="start-menu-link" id="blog-link">
-            <img data-source="notepad_icon" class="start-menu-icon">Blog
+        <a href="#" class="start-menu-link bsod-trigger" id="paint-link">
+            <img data-source="paint_icon" class="start-menu-icon">Paint
+        </a>
+        <a href="#" class="start-menu-link bsod-trigger" id="solitaire-link">
+            <img data-source="solitaire_icon" class="start-menu-icon">Solitaire
         </a>
         <div class="start-menu-separator"></div>
-        <a href="#" class="start-menu-link" id="shutdown-link">
+        <a href="#" class="start-menu-link bsod-trigger" id="shutdown-link">
             <img data-source="shut_down_icon" class="start-menu-icon">Shut Down...
         </a>
     </div>
@@ -105,6 +151,27 @@ Please refresh the page to continue.
     </div>
 
     <div id="notification-container"></div>
+
+    <div id="pinball-popup" style="display:none; position:fixed; top:120px; left:120px; width:600px; height:470px; z-index:999; box-shadow:0 8px 24px #0003,0 2px 8px #a97c50; border-radius:12px; background:#222;">
+        <div id="pinball-bar" style="height:32px; background:#222; color:#fff; display:flex; align-items:center; justify-content:flex-end; cursor:move; border-radius:12px 12px 0 0;">
+            <button id="close-pinball" style="background:#900; color:#fff; border:none; font-size:1.5em; width:40px; height:32px; border-radius:0 12px 0 0; cursor:pointer;">&times;</button>
+        </div>
+        <div id="pinball-iframe-container" style="width:100%; height:470px; overflow:hidden;">
+            <!-- iframe will be injected here -->
+        </div>
+    </div>
+
+    <div id="info-popup" style="display:none; position:fixed; top:140px; left:140px; width:500px; z-index:999; box-shadow:0 8px 24px #0003,0 2px 8px #a97c50; border-radius:12px; background:#222;">
+        <div style="height:32px; background:#222; color:#fff; display:flex; align-items:center; justify-content:space-between; cursor:move; border-radius:12px 12px 0 0; padding:0; position:relative;">
+            <span style="padding-left:1em;">
+                <img data-source="calculator_icon" style="height:22px;vertical-align:middle;margin-right:6px;">Info
+            </span>
+            <button id="close-info" style="background:#900; color:#fff; border:none; font-size:1.5em; height:32px; width:48px; border-radius:0 12px 0 0; cursor:pointer; position:absolute; right:0; top:0;">&times;</button>
+        </div>
+        <div id="info-content" style="padding:1em; color:#fff; font-family:'Arial',sans-serif; font-size:1em;">
+            Loading info...
+        </div>
+    </div>
 
     <script src="js/shared.js"></script>
     <script src="js/main.js"></script>
