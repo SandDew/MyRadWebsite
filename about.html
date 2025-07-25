@@ -9,49 +9,85 @@
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="win95-window95" id="about-window">
+    <div class="win95-window95" id="about-window" data-bg-source="about_me_background" style="background-size: cover; background-position: center;">
         <div class="win95-window95-titlebar">
             <span>
-                <img src="https://win98icons.alexmeub.com/icons/png/info_book-0.png" class="win95-window95-icon">
+                <img data-source="info_book_icon" class="win95-window95-icon">
                 About Me
             </span>
             <div class="win95-window95-controls">
                 <a href="index.html" class="win95-window95-btn" title="Back to Home"><b>✖</b></a>
             </div>
         </div>
-        <div class="win95-window95-content">
-            <img src="https://avatars.githubusercontent.com/u/9919?s=200&v=4" alt="Profile" class="profile-img">
-            <h2>A</h2>
-            <p>
-                B
-            </p>
-            <h3>Hobbies & Interests</h3>
-            <ul>
-                <li>A</li>
-                <li>B</li>
-                <li>C</li>
-                <li>D</li>
-                <li>E</li>
-            </ul>
-            <h3>Fun Facts</h3>
-            <ul>
-                <li>1</li>
-                <li>2</li>
-                <li>3</li>
-            </ul>
-            <h3>Contact</h3>
-            <a href="mailto:your.email@example.com" class="contact-link">email</a>
+        <div class="win95-window95-content about-flex">
+            <div class="about-main">
+                <section id="introduction">
+                    <h2>Introduction</h2>
+                    <p>
+                        How're you doing? I'm Dewy, I built this page to share a bit about what I do, who I am, and centralize my projects since I never can seem to stick 
+                        to one thing. I <i>really</i> mean that 😅, I've jumped between building small hardware, 3D modeling, animation, video editing, CAD, a bit of music production, and who knows what else given some time! 
+                        <br>Take it as my informal form of a business card -eh? 
+                        <br><i>Maybe you'll think some of it's interesting!</i>
+                    </p>
+                </section>
+                
+                <section id="interests">
+                    <h2>Interests</h2>
+                    <div class="interest-group">
+                        <h3 id="modeling">  Modeling <br> (CAD / Blender / Unity)</h3>
+                        <p>
+                            placeholder. 
+                        </p>
+                        <h3 id="tinkering">Tinkering (3D Printing / Projects)</h3>
+                        <p>
+                            placeholder. 
+                        </p>
+                        <h3 id="vr">VR (Hardware Dev / Software Production)</h3>
+                        <p>
+                            placeholder. 
+                        </p>
+                        <h3 id="biking">Biking (Mountain / Road)</h3>
+                        <p>
+                            placeholder. 
+                        </p>
+                    </div>
+                </section>
+                
+                <section id="contact">
+                    <h2>Contact Me</h2>
+                    <p>
+                        Like the website? Have any questions?<br>
+                        <i><a href="mailto:pzaluplt2@mozmail.com" class="contact-link">Send me an email!</a></i>
+                       <br><small style="color: grey;">(pzaluplt2@mozmail.com)</small>
+                    </p>
+                </section>
+
+            </div>
         </div>
         <div class="win95-window95-statusbar">
             1 object(s)
         </div>
     </div>
+      <nav class="about-nav">
+    <ul>
+        <li><a href="#introduction">Introduction</a></li>
+        <li><a href="#interests">Interests</a></li>
+        <li><a href="#contact">Contact Me</a></li>
+    </ul>
+</nav>
     <!-- Move social-links here, outside the window -->
     <div class="social-links">
-        <a href="https://github.com/yourusername" target="_blank" class="social-btn github-btn" title="GitHub" aria-label="GitHub"></a>
-        <a href="https://ko-fi.com/yourkofi" target="_blank" class="social-btn kofi-btn" title="Ko-Fi" aria-label="Ko-Fi"></a>
-        <a href="https://youtube.com/yourchannel" target="_blank" class="social-btn youtube-btn" title="YouTube" aria-label="YouTube"></a>
+        <a href="https://github.com/SandDew" target="_blank" class="social-btn github-btn" title="GitHub" aria-label="GitHub"></a>
+        <a href="https://ko-fi.com/Sandewy" target="_blank" class="social-btn kofi-btn" title="Ko-Fi" aria-label="Ko-Fi"></a>
+        <a href="https://youtube.com/@Sandewy" target="_blank" class="social-btn youtube-btn" title="YouTube" aria-label="YouTube"></a>
     </div>
+
+    <!-- Full-page-width bottom bar overlay -->
+<div class="bottom-bar-overlay-global">
+    <img data-source="fence" alt="Overlay 1" class="bottom-bar-img fence-img">
+    <img data-source="zz_overlay" alt="Overlay 2" class="bottom-bar-img zz-img toggle-bar-img" style="display: none;">
+</div>
+    <script src="js/shared.js"></script>
     <script src="js/about.js"></script>
 </body>
 </html>

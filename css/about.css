@@ -1,17 +1,25 @@
+body {
+    font-family: 'Segoe UI', 'Arial', sans-serif;
+    background: #fff;
+    color: #222;
+    margin: 0;
+    padding: 0;
+}
+
 .social-links {
     position: fixed;
     bottom: 18px;
     right: 18px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: 8px;
     z-index: 9999;
 }
 
 .social-btn {
     display: block;
-    width: 120px;   /* Set to your button image width */
-    height: 32px;   /* Set to your button image height */
+    width: 120px;
+    height: 32px;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -24,31 +32,196 @@
     image-rendering: pixelated;
 }
 
-/* GitHub button */
-.github-btn {
-    background-image: url('https://raw.githubusercontent.com/SandDew/MyRadWebsite/refs/heads/main/media/Icons/Github-A.PNG');
-}
-.github-btn:active {
-    background-image: url('https://raw.githubusercontent.com/SandDew/MyRadWebsite/refs/heads/main/media/Icons/Github-B.PNG');
+.github-btn { background-image: url('https://raw.githubusercontent.com/SandDew/MyRadWebsite/refs/heads/main/media/Icons/Github-A.PNG'); }
+.github-btn:active { background-image: url('https://raw.githubusercontent.com/SandDew/MyRadWebsite/refs/heads/main/media/Icons/Github-B.PNG'); }
+.kofi-btn { background-image: url('https://raw.githubusercontent.com/SandDew/MyRadWebsite/refs/heads/main/media/Icons/Ko-Fi-A.PNG'); }
+.kofi-btn:active { background-image: url('https://raw.githubusercontent.com/SandDew/MyRadWebsite/refs/heads/main/media/Icons/Ko-Fi-B.PNG'); }
+.youtube-btn { background-image: url('https://raw.githubusercontent.com/SandDew/MyRadWebsite/refs/heads/main/media/Icons/YT-A.PNG'); }
+.youtube-btn:active { background-image: url('https://raw.githubusercontent.com/SandDew/MyRadWebsite/refs/heads/main/media/Icons/YT-B.PNG'); }
+
+.win95-window95-content .social-links { display: none; }
+
+.about-flex {
+    display: flex;
+    gap: 32px;
+    align-items: flex-start;
+    min-height: 400px;
 }
 
-/* Ko-Fi button */
-.kofi-btn {
-    background-image: url('https://raw.githubusercontent.com/SandDew/MyRadWebsite/refs/heads/main/media/Icons/Ko-Fi-A.PNG');
-}
-.kofi-btn:active {
-    background-image: url('https://raw.githubusercontent.com/SandDew/MyRadWebsite/refs/heads/main/media/Icons/Ko-Fi-B.PNG');
+.about-main {
+    font-family: 'Terminal', 'Consolas', 'monospace';
+    text-align: left;
+    font-size: 1.15em;
+    line-height: 1.7;
+    padding: 32px 40px 100px 64px;
+    background: transparent;
+    max-width: 640px;
+    margin-left: 100px;
+    margin-right: auto;
+    margin-bottom: 90px;
+    margin-top: 10px;
+    position: relative;
+    min-width: 0;
+    flex: 2;
+    padding-bottom: 60px;
 }
 
-/* YouTube button */
-.youtube-btn {
-    background-image: url('https://raw.githubusercontent.com/SandDew/MyRadWebsite/refs/heads/main/media/Icons/YT-A.PNG');
-}
-.youtube-btn:active {
-    background-image: url('https://raw.githubusercontent.com/SandDew/MyRadWebsite/refs/heads/main/media/Icons/YT-B.PNG');
+.bottom-bar-overlay-global {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    pointer-events: none;
+    z-index: 9997;
+    background: transparent;
+    box-sizing: border-box;
 }
 
-/* Hide any social-links inside content area */
-.win95-window95-content .social-links {
-    display: none;
+.bottom-bar-img {
+    width: 100%;
+    image-rendering: pixelated;
+    object-fit: cover;
+    display: block;
 }
+
+.about-nav {
+    position: fixed;
+    bottom: 70px;
+    right: 18px;
+    z-index: 10001;
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    align-items: center;
+    background: none;
+    box-shadow: none;
+    padding: 0;
+    border: none;
+}
+
+.about-nav ul {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    background: none;
+}
+
+.about-nav li { margin: 0; }
+
+.about-nav a {
+    color: #222;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 18px;
+    border-radius: 4px;
+    background: #e0e0e0;
+    border: 2px outset #fff;
+    box-shadow: 1px 1px 0 #bbb;
+    font-size: 16px;
+    font-family: 'Terminal', 'Consolas', 'monospace';
+    transition: background 0.2s, color 0.2s, border 0.2s;
+    opacity: 1;
+    outline: none;
+}
+
+.about-nav a:hover,
+.about-nav a:focus {
+    background: #c0c0c0;
+    color: #000;
+    border: 2px inset #bbb;
+    box-shadow: none;
+}
+
+.about-nav ul ul { display: none; }
+
+.about-main h2, .about-main h3 {
+    font-family: 'Terminal', 'Consolas', 'monospace';
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-top: 32px;
+    margin-bottom: 12px;
+    color: #222;
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+.about-main h2 {
+    font-size: 1.5em;
+    border-bottom: 2px solid #bbb;
+    padding-bottom: 4px;
+}
+
+.about-main h3 {
+    font-size: 1.15em;
+    color: #444;
+    margin-top: 24px;
+}
+
+.about-main a, .contact-link {
+    color: #0078d7;
+    text-decoration: underline;
+    transition: color 0.2s;
+}
+.about-main a:hover, .contact-link:hover {
+    color: #005fa3;
+}
+
+.contact-link {
+    color: #008080;
+    text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+    .about-flex { flex-direction: column; }
+    .about-nav {
+        position: fixed;
+        width: auto;
+        min-width: 0;
+        max-width: none;
+        border-radius: 8px;
+        box-shadow: 0 8px 32px 0 #8888, 0 0 0 4px #fff inset;
+        background: #e0e0e0;
+        border: 2px outset #fff;
+        font-size: 16px;
+        left: auto;
+        right: 20px;
+        bottom: 120px;
+        padding: 8px 0;
+    }
+    .about-nav ul {
+        flex-direction: row;
+        gap: 8px;
+    }
+}
+
+@media (max-width: 700px) {
+    .about-main {
+        max-width: 98vw;
+        margin-left: 0;
+        padding: 16px 8px 100px 8px;
+    }
+    .win95-window95-content {
+        padding-bottom: 120px !important;
+    }
+}
+
+/* Remove background, border, and box-shadow from .win95-window95-content */
+.win95-window95-content {
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    max-width: none !important;
+    margin: 0 !important;
+    overflow-y: auto;
+    padding-bottom: 120px !important;
+}
+
+.fence-img { display: block; }
+.zz-img { display: none; }
