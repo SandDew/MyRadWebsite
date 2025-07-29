@@ -267,7 +267,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     <b>Screen Size:</b> ${window.screen.width} x ${window.screen.height}<br>
                     <b>Window Size:</b> ${window.innerWidth} x ${window.innerHeight}<br>
                     <b>Device Pixel Ratio:</b> ${window.devicePixelRatio}<br>
-                    <b>Language:</b> ${navigator.language}<br>
                     <b>Languages:</b> ${navigator.languages ? navigator.languages.join(', ') : 'Unknown'}<br>
                     <b>Timezone:</b> ${Intl.DateTimeFormat().resolvedOptions().timeZone}<br>
                     <b>Platform:</b> ${navigator.platform}<br>

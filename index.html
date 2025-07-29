@@ -14,7 +14,7 @@
 <div id="screen-warning" style="display:none; position:fixed; top:0; width:100vw; height:100vh; background:#b3b1b1; color:#222; z-index:99999; font-family:'Press Start 2P', 'Calibri', sans-serif; font-size:1.3em; align-items:center; justify-content:center; text-align:center;">
     <div style="width:50%;max-width:700px;display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;margin:auto;">
         <b><p>⚠️<br> Your screen is too small for this page. </p>
-        <p>This website is designed for desktop usage.</p>
+        <p>This is designed for desktop usage.</p>
         <p>Please use a larger display for the best experience.</p></b>
         <a id="ignore-warning-btn" style="margin-top:1em; color:#888; font-size:0.9em; cursor:pointer;">(ignore)</a>
     </div>
@@ -25,7 +25,7 @@
             <img data-source="flames_gif" alt="My Webpage">
         </div>
         <div class="outdated-note-box">
-            Note: This website is <span class="color-change">out of date</span>, please go to my new website: 
+            Note: This is <span class="color-change">out of date</span>, please go to my new website: 
             <a href="https://www.youtube.com/watch?v=59O0TgS7EMI" target="_blank" class="generic-link">here</a>
         </div>
         <div class="container">
@@ -54,31 +54,44 @@
             </div>
             <div class="win95-window-content" style="background: repeating-linear-gradient(to bottom,#f8fafd 0px,#f8fafd 7px,#e3f0fa 8px,#f8fafd 16px); min-height:220px;">
                 <div class="explorer-folder-grid">
-                    <div class="explorer-folder-item">
+                    <a href="about.html" class="explorer-folder-item explorer-folder-file-link">
                         <img data-source="info_book_icon" class="explorer-folder-file-icon" alt="About Me">
-                        <div><a href="about.html" class="explorer-folder-file-link">About Me</a></div>
-                    </div>
-                    <div class="explorer-folder-item">
+                        <div><b>About Me</b></div>
+                    </a>
+                    <a href="projects.html" class="explorer-folder-item explorer-folder-file-link">
                         <img data-source="computer_explorer_icon" class="explorer-folder-file-icon" alt="My Projects">
-                        <div><a href="projects.html" class="explorer-folder-file-link">My Projects</a></div>
-                    </div>
-                    <div class="explorer-folder-item">
+                        <div><b>My Projects</b></div>
+                    </a>
+                    <a href="photos.html" class="explorer-folder-item explorer-folder-file-link">
                         <img data-source="camera_icon" class="explorer-folder-file-icon" alt="Cool Photos">
-                        <div><a href="photos.html" class="explorer-folder-file-link">Cool Photos</a></div>
-                    </div>
-                    <div class="explorer-folder-item">
-                        <img data-source="notepad_icon" class="explorer-folder-file-icon" alt="Blog">
-                        <div><a href="blog.html" class="explorer-folder-file-link">Blog</a></div>
-                    </div>
-                    <div class="explorer-folder-item">
+                        <div><b>Cool Photos</b></div>
+                    </a>
+                    <a href="#" class="explorer-folder-item explorer-folder-file-link" id="pinball-link">
                         <img data-source="pinball_icon" class="explorer-folder-file-icon" alt="3D Pinball">
-                        <div><a href="#" class="explorer-folder-file-link" id="pinball-link">3D Pinball</a></div>
-                    </div>
-                    <div class="explorer-folder-item">
+                        <div><b>3D Pinball</b></div>
+                    </a>
+                    <a href="#" class="explorer-folder-item explorer-folder-file-link" id="info-link">
                         <img data-source="calculator_icon" class="explorer-folder-file-icon" alt="Info">
-                        <div><a href="#" class="explorer-folder-file-link" id="info-link">Info</a></div>
+                        <div><b>Information</b></div>
+                    </a>
+                </div>
+                <!-- "New here?" placeholder image with arrow, centered below the grid -->
+                <div style="display: flex; flex-direction: row; align-items: flex-end; justify-content: space-between; margin: 10px 0 0 0px; width: 100%;">
+                    <!-- "New here?" GIF all the way left, aligned to bottom -->
+                    <div style="flex: 0 0 auto; margin-left: 30px; margin-bottom: 0;">
+                        <img data-source="new_here_placeholder" alt="New here?" style="width: 180px; max-width: 90%; margin-bottom: 0;">
                     </div>
-
+                    <!-- Visitor counter and Geocities credit stacked, bottom right -->
+                    <div style="display: flex; flex-direction: column; align-items: flex-end; justify-content: flex-end; min-width: 220px;">
+                        <div id="visitor-counter-explorer" style="margin-bottom: 6px;">
+                            <i style="font-family:'MS Sans Serif', Arial, sans-serif; font-size:1em; font-style:italic; background: linear-gradient(90deg, #00ffd0, #ffb347, #ff00cc, #00ffd0); background-size: 200% 100%; background-clip: text; -webkit-background-clip: text; color: transparent; -webkit-text-fill-color: transparent; animation: spectrumVisitor 2s linear infinite alternate;">
+                               <b><i> You're visitor: <span id="visitor-count-explorer">0</span></i></b>
+                            </i>
+                        </div>
+                        <div id="geocities-credit-explorer" style="color:#afaeae; font-family:'MS Sans Serif', Arial, sans-serif; opacity:0.7; font-size:1em;">
+                            <b><i>Could've been made with Geocities. </i></b>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -173,7 +186,25 @@ Please refresh the page to continue.
         </div>
     </div>
 
+    <script>
+        // Random visitor count (between 1000 and 9999)
+        document.getElementById('visitor-count').textContent = Math.floor(Math.random() * 9000) + 1000;
+    </script>
     <script src="js/shared.js"></script>
     <script src="js/main.js"></script>
+
+    <!-- Add this to your <style> or extras.css for the flashy effect -->
+    <style>
+    @keyframes spectrumVisitor {
+        0% { background-position: 0% 50%; }
+        100% { background-position: 100% 50%; }
+    }
+    </style>
+
+    <!-- Place this script just before </body> -->
+    <script>
+        // Random visitor count (between 1000 and 9999)
+        document.getElementById('visitor-count-explorer').textContent = Math.floor(Math.random() * 9000) + 1000;
+    </script>
 </body>
 </html>
