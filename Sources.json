@@ -20,11 +20,15 @@
   "click_gif": "media/Click.gif",
   "world_gif": "media/World.gif",
   "spinning_cd_gif": "media/SpinningCD.gif",
-  "clippy_gif": "media/Clippy.gif",
   "solitaire_icon": "https://win98icons.alexmeub.com/icons/png/game_hearts.png",
   "paint_icon": "https://win98icons.alexmeub.com/icons/png/no2-0.png",
   "clock_icon": "https://win98icons.alexmeub.com/icons/png/clock-1.png",
   "calculator_icon": "https://win98icons.alexmeub.com/icons/png/no2-0.png",
   "pinball_icon": "media/Icons/Pinball.png",
-  "new_here_placeholder": "media/NewHere.gif"
+  "new_here_placeholder": "media/NewHere.gif",
+  "wii_menu_bg": "media/WiiBackground.jpg",
+  "wii_bottom_bar": "media/BottomBar.png",
+  "wii_cursor": "media/WiiCursor.png",
+  "wii_music": "media/MainMenu.mp3",
+  "static_placeholder": "media/Static.gif"
 }

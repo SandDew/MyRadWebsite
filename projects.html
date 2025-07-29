@@ -7,42 +7,113 @@
     <link rel="stylesheet" href="css/general.css">
     <link rel="stylesheet" href="css/win95.css">
     <link rel="stylesheet" href="css/extras.css">
+    <link rel="stylesheet" href="css/wii.css">
     <link rel="stylesheet" href="projects.css">
 </head>
-<div id="screen-warning" style="display:none; position:fixed; top:0; width:100vw; height:100vh; background:#b3b1b1; color:#222; z-index:99999; font-family:'Press Start 2P', 'Calibri', sans-serif; font-size:1.3em; align-items:center; justify-content:center; text-align:center;">
-    <div style="width:50%;max-width:700px;display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;margin:auto;">
-        <b><p>⚠️<br> Your screen is too small for this page. </p>
-        <p>This website is designed for desktop usage.</p>
-        <p>Please use a larger display for the best experience.</p></b>
-        <a id="ignore-warning-btn" style="margin-top:1em; color:#888; font-size:0.9em; cursor:pointer;">(ignore)</a>
-    </div>
-</div>
 <body>
-    <div class="win95-window95" id="projects-window">
-        <div class="win95-window95-titlebar">
-            <span>
-                <img src="https://win98icons.alexmeub.com/icons/png/computer_explorer-0.png" class="win95-window95-icon">
-                My Projects
-            </span>
-            <div class="win95-window95-controls">
-                <a href="index.html" class="win95-window95-btn" title="Back to Home"><b>✖</b></a>
+    <div class="wii-bg-image" data-bg-source="wii_menu_bg"></div>
+    <div id="screen-warning" style="display:none; position:fixed; top:0; width:100vw; height:100vh; background:#b3b1b1; color:#222; z-index:99999; font-family:'Press Start 2P', 'Calibri', sans-serif; font-size:1.3em; align-items:center; justify-content:center; text-align:center;">
+        <div style="width:50%;max-width:700px;display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;margin:auto;">
+            <p>⚠️<br> Your screen is too small for this page.</p>
+            <p>This website is designed for desktop usage.</p>
+            <p>Please use a larger display for the best experience.</p>
+            <a id="ignore-warning-btn" style="margin-top:1em; color:#888; font-size:0.9em; cursor:pointer;">(ignore)</a>
+        </div>
+    </div>
+    <div class="wii-menu-bg">
+        <div class="wii-menu-sections">
+            <div class="wii-section-bar">Engineering</div>
+            <div class="wii-channels-row">
+                <div class="wii-channel" onclick="openProject('project4')">
+                    <img src="https://win98icons.alexmeub.com/icons/png/settings_gear-2.png" alt="6DoF Tracker">
+                    <span>Example1</span>
+                </div>
+                <img class="wii-project-gif" src="media/Static.gif" alt="Project GIF">
+            </div>
+            <div class="wii-section-bar">3D Modeling</div>
+            <div class="wii-channels-row">
+                <div class="wii-channel" onclick="openProject('project1')">
+                    <img src="https://win98icons.alexmeub.com/icons/png/cube-0.png" alt="Room Virtualization">
+                    <span>Example2</span>
+                </div>
+                <img class="wii-project-gif" src="media/Static.gif" alt="Project GIF">
+            </div>
+            <div class="wii-section-bar">Misc</div>
+            <div class="wii-channels-row">
+                <div class="wii-channel" onclick="openProject('project8')">
+                    <img src="https://win98icons.alexmeub.com/icons/png/camera-2.png" alt="Video Editing">
+                    <span>Example3</span>
+                </div>
+                <img class="wii-project-gif" src="media/Static.gif" alt="Project GIF">
             </div>
         </div>
-        <div class="win95-window95-content">
+        <img class="wii-bottom-bar" src="media/BottomBar.png" alt="Wii Bottom Bar">
+        <div class="wii-footer-mail"></div>
+    </div>
+    <div class="wii-footer-time">
+        <span id="wii-time">12:00</span>
+        <span id="wii-date">Fri 1/1</span>
+    </div>
+    <!-- Wii cursor -->
+    <img id="wii-cursor" src="media/WiiCursor.png" alt="Wii Cursor" />
+    <!-- Modal for project details -->
+    <div id="wii-project-modal" class="wii-modal">
+        <div class="wii-modal-content">
+            <span class="wii-modal-close" onclick="closeProjectModal()">✖</span>
+            <div id="wii-project-details"></div>
         </div>
+    </div>
+    <!-- Wii Music Audio (hidden, controlled by JS) -->
+    <audio id="wii-music" loop></audio>
+    <!-- Mute Button -->
+    <div id="wii-mute-btn" class="wii-mute-btn" title="Mute/Unmute">🔊</div>
+    <!-- Exit Button -->
+    <div class="wii-menu-exit" title="Exit" onclick="window.location.href='index.html'">✖</div>
     <script src="js/shared.js"></script>
     <script src="js/projects.js"></script>
-<script>
-function updateWiiTime() {
-    const now = new Date();
-    const pad = n => n.toString().padStart(2, '0');
-    document.getElementById('wii-time').textContent = pad(now.getHours()) + ':' + pad(now.getMinutes());
-    const days = ['So','Mo','Di','Mi','Do','Fr','Sa'];
-    document.getElementById('wii-date').textContent =
-        pad(now.getDate()) + '.' + pad(now.getMonth()+1) + '. (' + days[now.getDay()] + ')';
-}
-setInterval(updateWiiTime, 1000);
-updateWiiTime();
-</script>
+    <script>
+    function updateWiiTime() {
+        const now = new Date();
+        const pad = n => n.toString().padStart(2, '0');
+        document.getElementById('wii-time').textContent = pad(now.getHours()) + ':' + pad(now.getMinutes());
+        const days = ['So','Mo','Di','Mi','Do','Fr','Sa'];
+        document.getElementById('wii-date').textContent =
+            pad(now.getDate()) + '.' + pad(now.getMonth()+1) + '. (' + days[now.getDay()] + ')';
+    }
+    setInterval(updateWiiTime, 1000);
+    updateWiiTime();
+
+    // --- Wii Music Logic ---
+    document.addEventListener('sourcesLoaded', function() {
+        const audio = document.getElementById('wii-music');
+        if (!audio) return;
+        audio.src = window.SOURCES && window.SOURCES.wii_music ? window.SOURCES.wii_music : '';
+        // Try to autoplay (may be blocked by browser until user interacts)
+        const muted = getCookie('wiiMusicMuted') === '1';
+        audio.muted = muted;
+        audio.volume = 0.7;
+        audio.play().catch(()=>{}); // ignore autoplay errors
+        updateMuteBtn(muted);
+    });
+
+    function updateMuteBtn(muted) {
+        const btn = document.getElementById('wii-mute-btn');
+        if (btn) btn.textContent = muted ? '🔇' : '🔊';
+    }
+
+    document.getElementById('wii-mute-btn').onclick = function() {
+        const audio = document.getElementById('wii-music');
+        if (!audio) return;
+        audio.muted = !audio.muted;
+        setCookie('wiiMusicMuted', audio.muted ? '1' : '0', 365);
+        updateMuteBtn(audio.muted);
+    };
+
+    // On load, set mute button state if cookie exists
+    document.addEventListener('DOMContentLoaded', function() {
+        const muted = getCookie('wiiMusicMuted') === '1';
+        updateMuteBtn(muted);
+    });
+    </script>
 </body>
 </html>

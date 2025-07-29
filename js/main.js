@@ -233,13 +233,13 @@ document.addEventListener('DOMContentLoaded', function() {
             .then(data => {
                 const ip = data.ip || "Unknown";
                 infoContent.innerHTML = `
-                    <b>Fun Facts About You:</b><br><br>
                     <b>IP Address:</b> ${ip}<br>
                     <b>Operating System:</b> ${getOSInfo()}<br>
                     <b>Browser:</b> ${getBrowserInfo()}<br>
                     <b>Screen Size:</b> ${window.screen.width} x ${window.screen.height}<br>
                     <b>Window Size:</b> ${window.innerWidth} x ${window.innerHeight}<br>
                     <b>Device Pixel Ratio:</b> ${window.devicePixelRatio}<br>
+                    <b>Current Language:</b> ${navigator.language || 'Unknown'}<br>
                     <b>Languages:</b> ${navigator.languages ? navigator.languages.join(', ') : 'Unknown'}<br>
                     <b>Timezone:</b> ${Intl.DateTimeFormat().resolvedOptions().timeZone}<br>
                     <b>Platform:</b> ${navigator.platform}<br>
@@ -260,7 +260,6 @@ document.addEventListener('DOMContentLoaded', function() {
             })
             .catch(() => {
                 infoContent.innerHTML = `
-                    <b>Fun Facts About You:</b><br><br>
                     <b>IP Address:</b> Unknown<br>
                     <b>Operating System:</b> ${getOSInfo()}<br>
                     <b>Browser:</b> ${getBrowserInfo()}<br>
