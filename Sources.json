@@ -29,6 +29,11 @@
   "wii_menu_bg": "media/WiiBackground.jpg",
   "wii_bottom_bar": "media/BottomBar.png",
   "wii_cursor": "media/WiiCursor.png",
+  "wii_cursor_2": "media/WiiCursor2.png",
   "wii_music": "media/MainMenu.mp3",
-  "static_placeholder": "media/Static.gif"
+  "static_placeholder": "media/Static.gif",
+  "channel_open": "media/Click Channel.mp3",
+  "channel_close": "media/Return.mp3",
+
+  "Roomy_Thumbnail": "media/Thumbnail_Roomy.png"
 }

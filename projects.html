@@ -12,6 +12,7 @@
 </head>
 <body>
     <div class="wii-bg-image" data-bg-source="wii_menu_bg"></div>
+    <div id="modal-bg-filter"></div>
     <div id="screen-warning" style="display:none; position:fixed; top:0; width:100vw; height:100vh; background:#b3b1b1; color:#222; z-index:99999; font-family:'Press Start 2P', 'Calibri', sans-serif; font-size:1.3em; align-items:center; justify-content:center; text-align:center;">
         <div style="width:50%;max-width:700px;display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;margin:auto;">
             <p>⚠️<br> Your screen is too small for this page.</p>
@@ -22,30 +23,7 @@
     </div>
     <div class="wii-menu-bg">
         <div class="wii-menu-sections">
-            <div class="wii-section-bar">Engineering</div>
-            <div class="wii-channels-row">
-                <div class="wii-channel" onclick="openProject('project4')">
-                    <img src="https://win98icons.alexmeub.com/icons/png/settings_gear-2.png" alt="6DoF Tracker">
-                    <span>Example1</span>
-                </div>
-                <img class="wii-project-gif" src="media/Static.gif" alt="Project GIF">
-            </div>
-            <div class="wii-section-bar">3D Modeling</div>
-            <div class="wii-channels-row">
-                <div class="wii-channel" onclick="openProject('project1')">
-                    <img src="https://win98icons.alexmeub.com/icons/png/cube-0.png" alt="Room Virtualization">
-                    <span>Example2</span>
-                </div>
-                <img class="wii-project-gif" src="media/Static.gif" alt="Project GIF">
-            </div>
-            <div class="wii-section-bar">Misc</div>
-            <div class="wii-channels-row">
-                <div class="wii-channel" onclick="openProject('project8')">
-                    <img src="https://win98icons.alexmeub.com/icons/png/camera-2.png" alt="Video Editing">
-                    <span>Example3</span>
-                </div>
-                <img class="wii-project-gif" src="media/Static.gif" alt="Project GIF">
-            </div>
+            <div id="channels-container"></div>
         </div>
         <img class="wii-bottom-bar" src="media/BottomBar.png" alt="Wii Bottom Bar">
         <div class="wii-footer-mail"></div>
@@ -56,12 +34,15 @@
     </div>
     <!-- Wii cursor -->
     <img id="wii-cursor" src="media/WiiCursor.png" alt="Wii Cursor" />
+    <img id="wii-cursor-2" alt="Wii Cursor 2" />
     <!-- Modal for project details -->
-    <div id="wii-project-modal" class="wii-modal">
-        <div class="wii-modal-content">
-            <span class="wii-modal-close" onclick="closeProjectModal()">✖</span>
-            <div id="wii-project-details"></div>
+    <div id="win95-project-modal" class="win95-window" style="display:none;">
+        <div class="win95-titlebar">
+            <img id="win95-modal-icon" class="win95-window-icon" src="" alt="">
+            <span id="win95-modal-title"></span>
+            <span class="win95-close" onclick="closeProjectModal()">✖</span>
         </div>
+        <div class="win95-window-content" id="win95-modal-content"></div>
     </div>
     <!-- Wii Music Audio (hidden, controlled by JS) -->
     <audio id="wii-music" loop></audio>
@@ -69,6 +50,10 @@
     <div id="wii-mute-btn" class="wii-mute-btn" title="Mute/Unmute">🔊</div>
     <!-- Exit Button -->
     <div class="wii-menu-exit" title="Exit" onclick="window.location.href='index.html'">✖</div>
+    <!-- Hand Cursor Toggle Button -->
+    <div id="wii-hand-toggle" class="wii-hand-toggle" title="Toggle Hand Cursor">
+        <img id="wii-hand-toggle-img" src="" alt="Toggle Hand" style="width:32px;height:32px;">
+    </div>
     <script src="js/shared.js"></script>
     <script src="js/projects.js"></script>
     <script>
