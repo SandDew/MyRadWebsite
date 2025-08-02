@@ -58,7 +58,7 @@ body {
     max-width: 640px;
     margin-left: 100px;
     margin-right: auto;
-    margin-bottom: 90px;
+    margin-bottom: 300px;
     margin-top: 10px;
     position: relative;
     min-width: 0;
@@ -223,5 +223,4 @@ body {
     padding-bottom: 120px !important;
 }
 
-.fence-img { display: block; }
-.zz-img { display: none; }
+.fence-gif-img { display: block; }

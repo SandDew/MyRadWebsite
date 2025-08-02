@@ -1,29 +1,18 @@
 // 1. Add your photos and captions here.
 const photoList = [
-    {
-        url: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80",
-        caption: "Mountain Lake"
-    },
-    {
-        url: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80",
-        caption: "Desert Road"
-    },
-    {
-        url: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80",
-        caption: "Forest Walk"
-    },
-    {
-        url: "https://images.unsplash.com/photo-1465101178521-c1a9136a3b99?auto=format&fit=crop&w=400&q=80",
-        caption: "City Lights"
-    },
-    {
-        url: "https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=400&q=80",
-        caption: "Sunset Beach"
-    },
-    {
-        url: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fthumbs.dreamstime.com%2Fz%2Ftwo-thumbs-up-both-hands-emotional-man-isolated-white-background-excited-bearded-guy-happy-face-emotion-very-much-118732502.jpg&f=1&nofb=1&ipt=6e1353e54b2ba26c49b9dc36d7aa1c36cf5e0659dd3bc111afb4056f0e688856",
-        caption: "Your did it!"
-    }
+    { key: "photo_breakfast", caption: "Breakfast" },
+    { key: "photo_caprisun", caption: "Caprisun" },
+    { key: "photo_c_and_c", caption: "C&C.webp" },
+    { key: "photo_desparation", caption: "Desparation" },
+    { key: "photo_eclipse", caption: "Eclipse" },
+    { key: "photo_joint_fix", caption: "Joint Fix" },
+    { key: "photo_laptop_repair", caption: "Laptop Repair" },
+    { key: "photo_lovely_cake", caption: "Lovely Cake" },
+    { key: "photo_my_pc", caption: "My PC" },
+    { key: "photo_ocean", caption: "Ocean" },
+    { key: "photo_painting", caption: "Painting" },
+    { key: "photo_pinout", caption: "Pinout" },
+    { key: "photo_pixel_art", caption: "Pixel Art" }
 ];
 
 // 2. Shuffle the array for random order
@@ -41,6 +30,12 @@ function renderPhotoMosaic() {
     mosaic.innerHTML = '';
     const photos = [...photoList];
     shuffleArray(photos);
+
+    // Wait for SOURCES to be loaded
+    if (!window.SOURCES) {
+        document.addEventListener('sourcesLoaded', renderPhotoMosaic, { once: true });
+        return;
+    }
 
     // Grid layout: 3 columns, centered
     const cols = 3;
@@ -77,9 +72,11 @@ function renderPhotoMosaic() {
         win.style.height = winH + 'px';
         win.style.transform = `rotate(${(Math.random() - 0.5) * 16}deg)`;
 
+        // Use SOURCES to get the image URL
+        const imgUrl = window.SOURCES[photo.key] || "";
         win.innerHTML = `
             <div class="polaroid-photo">
-                <img src="${photo.url}" alt="Photo" style="width:100%;height:100%;object-fit:cover;border-radius:8px;">
+                <img src="${imgUrl}" alt="Photo" style="width:100%;height:100%;object-fit:cover;border-radius:8px;">
             </div>
             <div class="polaroid-caption">${photo.caption}</div>
         `;

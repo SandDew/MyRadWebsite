@@ -1,0 +1,98 @@
+[
+    {
+        "section": "Engineering",
+        "title": "FE",
+        "iconKey": "FE_Thumbnail",
+        "html": "channels/FE.html"
+    },
+    {
+        "section": "Engineering",
+        "title": "Clock",
+        "iconKey": "Clock_Thumbnail",
+        "html": "channels/Clock.html"
+    },
+    {
+        "section": "Engineering",
+        "title": "FOV Exp",
+        "iconKey": "FOVExp_Thumbnail",
+        "html": "channels/FOVExp.html"
+    },
+    {
+        "section": "3D Modeling",
+        "title": "Lil Guy",
+        "iconKey": "LilGuy_Thumbnail",
+        "html": "channels/LilGuy.html"
+    },
+    {
+        "section": "3D Modeling",
+        "title": "Doggo",
+        "iconKey": "Doggo_Thumbnail",
+        "html": "channels/Doggo.html"
+    },
+    {
+        "section": "3D Modeling",
+        "title": "Roomy",
+        "iconKey": "Roomy_Thumbnail",
+        "html": "channels/Roomy.html"
+    },
+    {
+        "section": "3D Modeling",
+        "title": "ATS",
+        "iconKey": "ATS_Thumbnail",
+        "html": "channels/ATS.html"
+    },
+    {
+        "section": "3D Modeling",
+        "title": "Liminal",
+        "iconKey": "Liminal_Thumbnail",
+        "html": "channels/Liminal.html"
+    },
+    {
+        "section": "3D Modeling",
+        "title": "SIT",
+        "iconKey": "SIT_Thumbnail",
+        "html": "channels/SIT.html"
+    },
+    {
+        "section": "3D Modeling",
+        "title": "Horror",
+        "iconKey": "Horror_Thumbnail",
+        "html": "channels/Horror.html"
+    },
+    {
+        "section": "3D Modeling",
+        "title": "HandTJ",
+        "iconKey": "HandTJ_Thumbnail",
+        "html": "channels/HandTJ.html"
+    },
+    {
+        "section": "3D Modeling",
+        "title": "Tips-Misc",
+        "iconKey": "TipsMisc_Thumbnail",
+        "html": "channels/TipsMisc.html"
+    },
+    {
+        "section": "3D Modeling",
+        "title": "New Years",
+        "iconKey": "NewYears_Thumbnail",
+        "html": "channels/NewYears.html"
+    },
+    {
+        "section": "Misc",
+        "title": "MR (Music)",
+        "iconKey": "MR_Thumbnail",
+        "html": "channels/MR.html"
+    },
+    {
+        "section": "Misc",
+        "title": "Buckets",
+        "iconKey": "Buckets_Thumbnail",
+        "html": "channels/Buckets.html"
+    },
+    {
+        "section": "Misc",
+        "title": "VE",
+        "iconKey": "VE_Thumbnail",
+        "html": "channels/VE.html"
+    }
+]

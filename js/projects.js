@@ -150,38 +150,37 @@ const CHANNEL_CLOSE_SOUND = window.SOURCES?.channel_close || "media/Return.mp3";
 // Example Wii font, adjust as needed in your CSS
 const WII_FONT = "'Press Start 2P', 'Calibri', sans-serif";
 
-const CHANNELS = [
-    {
-        section: "Engineering",
-        title: "Example",
-        iconKey: "settings_gear_icon", // Use a key, not a path
-        html: "projects/project4.html"
-    },
-    {
-        section: "3D Modeling",
-        title: "Roomy",
-        iconKey: "Roomy_Thumbnail", // Use the key from Sources.json
-        html: "projects/project1.html"
-    },
-    {
-        section: "Misc",
-        title: "Misc Example",
-        iconKey: "Roomy_Thumbnail",
-        html: "projects/project8.html"
-    }
-    // Add more channels as needed
-];
+let CHANNELS = [];
+
+function loadChannels(callback) {
+    fetch('Channels.json')
+        .then(res => res.json())
+        .then(data => {
+            CHANNELS = data;
+            if (typeof callback === 'function') callback();
+        })
+        .catch(() => {
+            CHANNELS = [];
+            if (typeof callback === 'function') callback();
+        });
+}
 
 function renderChannels() {
     const container = document.getElementById('channels-container');
-    const sections = ["Engineering", "3D Modeling", "Misc"];
     container.innerHTML = '';
+    const sections = ["3D Modeling", "Misc", "Engineering"];
     sections.forEach(section => {
+        // Section wrapper (vertical column)
+        const sectionWrapper = document.createElement('div');
+        sectionWrapper.className = 'wii-section-wrapper';
+
+        // Section label
         const sectionBar = document.createElement('div');
         sectionBar.className = 'wii-section-bar';
         sectionBar.textContent = section;
-        container.appendChild(sectionBar);
+        sectionWrapper.appendChild(sectionBar);
 
+        // Channels row
         const row = document.createElement('div');
         row.className = 'wii-channels-row';
         const channels = CHANNELS.filter(c => c.section === section);
@@ -244,23 +243,18 @@ function renderChannels() {
             row.appendChild(chanDiv);
         });
 
-        container.appendChild(row);
+        sectionWrapper.appendChild(row);
+        container.appendChild(sectionWrapper);
     });
 }
 
-// Call after rendering channels
+// Load channels and render after sources are loaded
 document.addEventListener('sourcesLoaded', () => {
-    renderChannels();
+    loadChannels(renderChannels);
 });
 
-// Wait for sources to load before rendering channels
-document.addEventListener('sourcesLoaded', renderChannels);
-
 function openProject(channel) {
-    // Play channel open sound from Sources.json
-    const audio = new Audio(window.SOURCES.channel_open);
-    audio.volume = 0.7;
-    audio.play();
+    // Remove channel open sound
 
     // Show filter
     document.getElementById('modal-bg-filter').style.display = 'block';
@@ -268,7 +262,8 @@ function openProject(channel) {
     const modal = document.getElementById('win95-project-modal');
     modal.style.display = 'flex';
     document.getElementById('win95-modal-title').textContent = channel.title;
-    document.getElementById('win95-modal-icon').src = channel.icon;
+    // Use the same icon for all project windows
+    document.getElementById('win95-modal-icon').src = window.SOURCES.windows_icon;
     // Load HTML content
     fetch(channel.html)
         .then(res => res.text())
@@ -371,21 +366,15 @@ document.addEventListener('sourcesLoaded', () => {
         requestAnimationFrame(animate);
     }
     animate();
-
-    // Set hand toggle icon to player 2 cursor image
-    const handBtnImg = document.getElementById('wii-hand-toggle-img');
-    if (handBtnImg) {
-        handBtnImg.src = window.SOURCES.wii_cursor_2;
-    }
 });
 
 // Hand toggle button logic
 document.addEventListener('DOMContentLoaded', () => {
     const handBtn = document.getElementById('wii-hand-toggle');
-    const handBtnImg = document.getElementById('wii-hand-toggle-img');
+    const handBtnEmoji = document.getElementById('wii-hand-toggle-emoji');
     function updateHandBtn() {
-        if (handBtnImg) {
-            handBtnImg.style.opacity = handEnabled ? '1' : '0.3';
+        if (handBtnEmoji) {
+            handBtnEmoji.style.opacity = handEnabled ? '1' : '0.3';
         }
     }
     updateHandBtn();
@@ -395,4 +384,17 @@ document.addEventListener('DOMContentLoaded', () => {
         setCookie('wiiHandEnabled', handEnabled ? '1' : '0', 365);
         updateHandBtn();
     };
+});
+
+// Menu sections horizontal scroll
+document.addEventListener('DOMContentLoaded', function() {
+    const menuSections = document.querySelector('.wii-menu-sections');
+    if (menuSections) {
+        menuSections.addEventListener('wheel', function(e) {
+            if (e.deltaY !== 0) {
+                e.preventDefault();
+                menuSections.scrollLeft += e.deltaY;
+            }
+        }, { passive: false });
+    }
 });
